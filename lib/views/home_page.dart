@@ -1,45 +1,46 @@
 import 'package:flutter/material.dart';
+import 'package:grad_project/controllers/background.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    // getting the size of the window
+    var size = MediaQuery.of(context).size;
+    var height = size.height;
+    var width = size.width;
+
     return  Scaffold(
       body: Stack(
         children: [
-          Container(
-            decoration: const BoxDecoration(
-              image: DecorationImage(
-                image:  AssetImage("images/background.jpg"),
-                fit: BoxFit.fill,
-              ),
-            ),
+          //set up the background image
+          const Background(),
+
+          //the app bar
+          const Padding(
+            padding: EdgeInsets.all(20),
+            child: Align(
+                alignment: Alignment.topCenter,
+                child: Text(
+                  'Home',
+                  style: TextStyle(fontSize: 30, color: Colors.white, fontWeight: FontWeight.w600, letterSpacing: 3),)),
           ),
-          Padding(
-            padding: const EdgeInsets.all(20),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: const [
-                Text('Welcome..',style: TextStyle(fontSize: 30, color: Colors.white, fontWeight: FontWeight.w500),),
-                Text('Make the sun work for you!',style: TextStyle(fontSize: 20, color: Colors.white, fontWeight: FontWeight.normal),),
-              ],
-            ),
-          ),
+
+          //the white container
           Align(
             alignment: Alignment.bottomCenter,
             child: Container(
               decoration: const BoxDecoration(
-                color: Color(0xfff6f6f6),
-                borderRadius: BorderRadius.only(topLeft: Radius.circular(25), topRight: Radius.circular(25))
+                  color: Colors.white,
+                  borderRadius: BorderRadius.only(topLeft: Radius.circular(25), topRight: Radius.circular(25))
               ),
-
-              height:600,
-              width: double.maxFinite,
+              height:height * 0.78,
+              width: width,
             ),
           )
         ],
-      )
+      ),
     );
   }
 }
