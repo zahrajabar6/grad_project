@@ -38,7 +38,7 @@ class _MyPagesState extends State<MyPages> {
           decoration: BoxDecoration(
             boxShadow: <BoxShadow>[
               BoxShadow(
-                color: Colors.black.withOpacity(0.10),
+                color: Colors.black.withOpacity(0.30),
                 blurRadius: 2,
               ),
             ],

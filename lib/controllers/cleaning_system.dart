@@ -31,18 +31,14 @@ class _CleaningSysCardState extends State<CleaningSysCard> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text("Cleaning System", style: TextStyle(fontSize: 26, color: AppColors.mainBlue, fontWeight: FontWeight.w500),),
-              Transform.scale(
-                scale: 1.05,
-                child: Switch.adaptive(
-                    activeColor: AppColors.mainBlue,
-
-                    value: value,
-                    onChanged: (value){
-                      setState(() {
-                        this.value = value;
-                      });
-                    }),
-              )
+              Switch.adaptive(
+                  activeColor: AppColors.mainBlue,
+                  value: value,
+                  onChanged: (value){
+                    setState(() {
+                      this.value = value;
+                    });
+                  })
             ],
           ),
         ),
