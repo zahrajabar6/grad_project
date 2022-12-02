@@ -15,6 +15,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         fontFamily: "Lato",
         primarySwatch: Colors.blue,
+        platform: TargetPlatform.iOS,
       ),
       home: const MyPages(),
     );
