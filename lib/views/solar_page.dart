@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:grad_project/controllers/background.dart';
 import 'package:grad_project/controllers/cleaning_system.dart';
-import 'package:grad_project/controllers/colors.dart';
 import 'package:grad_project/controllers/my_card.dart';
 
 class SolarPage extends StatelessWidget {
@@ -17,11 +16,10 @@ class SolarPage extends StatelessWidget {
     //then we will use api to get these values
     final items = <dynamic>[
       ['Current', '10 A'],
-      ['Voltage','12 V'],
-      ['Temperature','15 C'],
-      ['Humidity','10 %'],
-      ['Rain','No Rain'],
-      ['Dust','Dusty']
+      ['Voltage', '12 V'],
+      ['Temperature', '15 C'],
+      ['Humidity', '10 %'],
+      ['Dust', 'Dusty']
     ];
 
     return Scaffold(
@@ -31,14 +29,18 @@ class SolarPage extends StatelessWidget {
           const Background(),
 
           //the app bar
-          Padding(
-            padding: const EdgeInsets.all(20),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: const [
-                Text('Welcome!',style: TextStyle(fontSize: 30, color: Colors.white, fontWeight: FontWeight.w600, letterSpacing: 3),),
-                Text('Make the sun work for you.',style: TextStyle(fontSize: 20, color: Colors.white, fontWeight: FontWeight.normal),),
-              ],
+          const Padding(
+            padding: EdgeInsets.all(20),
+            child: Align(
+              alignment: Alignment.topCenter,
+              child: Text(
+                'Solar Panel',
+                style: TextStyle(
+                    fontSize: 30,
+                    color: Colors.white,
+                    fontWeight: FontWeight.w600,
+                    letterSpacing: 3),
+              ),
             ),
           ),
 
@@ -49,9 +51,10 @@ class SolarPage extends StatelessWidget {
               padding: const EdgeInsets.all(15),
               decoration: const BoxDecoration(
                   color: Colors.white,
-                  borderRadius: BorderRadius.only(topLeft: Radius.circular(25), topRight: Radius.circular(25))
-              ),
-              height:height * 0.75,
+                  borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(25),
+                      topRight: Radius.circular(25))),
+              height: height * 0.78,
               width: width,
               child: SingleChildScrollView(
                 child: Column(
@@ -61,8 +64,13 @@ class SolarPage extends StatelessWidget {
                         direction: Axis.horizontal,
                         spacing: 8,
                         //Get the children from the item list
-                        children: items.map((e) => MyCard(width: width * 0.45, height: height*0.20, parameter: e[0].toString(), value: e[1].toString())).toList()
-                    ),
+                        children: items
+                            .map((e) => MyCard(
+                                width: width,
+                                height: height * 0.20,
+                                parameter: e[0].toString(),
+                                value: e[1].toString()))
+                            .toList()),
                     CleaningSysCard(width: width, height: height)
                   ],
                 ),
@@ -74,7 +82,3 @@ class SolarPage extends StatelessWidget {
     );
   }
 }
-
-
-
-

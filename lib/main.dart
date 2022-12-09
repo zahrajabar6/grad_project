@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:grad_project/views/main_page.dart';
+import 'package:grad_project/views/login_page.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -17,8 +18,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         platform: TargetPlatform.iOS,
       ),
-      home: const MyPages(),
+      home: const MyLoginPage(),
     );
   }
 }
-

@@ -18,7 +18,7 @@ class MyCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: width ,
+      width: width,
       height: height,
       child: Card(
         color: Colors.white,
@@ -26,9 +26,23 @@ class MyCard extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(parameter, style: TextStyle(fontSize: 26, color: AppColors.mainBlue, fontWeight: FontWeight.w500),),
-            SizedBox(height: height* 0.08,),
-            Text(value, style: TextStyle(fontSize: 24, color: AppColors.lightGrey, fontWeight: FontWeight.w500),)
+            Text(
+              parameter,
+              style: TextStyle(
+                  fontSize: 22,
+                  color: AppColors.mainBlue,
+                  fontWeight: FontWeight.w500),
+            ),
+            SizedBox(
+              height: height * 0.08,
+            ),
+            Text(
+              value,
+              style: TextStyle(
+                  fontSize: 18,
+                  color: AppColors.lightGrey,
+                  fontWeight: FontWeight.w500),
+            )
           ],
         ),
       ),
