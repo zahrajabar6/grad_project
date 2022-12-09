@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:grad_project/controllers/app_bar.dart';
 import 'package:grad_project/controllers/background.dart';
 
 class HomePage extends StatelessWidget {
@@ -11,7 +12,7 @@ class HomePage extends StatelessWidget {
     var height = size.height;
     var width = size.width;
 
-    return  Scaffold(
+    return Scaffold(
       body: Stack(
         children: [
           //set up the background image
@@ -21,10 +22,7 @@ class HomePage extends StatelessWidget {
           const Padding(
             padding: EdgeInsets.all(20),
             child: Align(
-                alignment: Alignment.topCenter,
-                child: Text(
-                  'Home',
-                  style: TextStyle(fontSize: 30, color: Colors.white, fontWeight: FontWeight.w600, letterSpacing: 3),)),
+                alignment: Alignment.topCenter, child: MyAppBar(text: 'Home')),
           ),
 
           //the white container
@@ -33,9 +31,10 @@ class HomePage extends StatelessWidget {
             child: Container(
               decoration: const BoxDecoration(
                   color: Colors.white,
-                  borderRadius: BorderRadius.only(topLeft: Radius.circular(25), topRight: Radius.circular(25))
-              ),
-              height:height * 0.78,
+                  borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(15),
+                      topRight: Radius.circular(15))),
+              height: height * 0.73,
               width: width,
             ),
           )

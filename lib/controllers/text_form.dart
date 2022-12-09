@@ -32,20 +32,26 @@ class MyTextFormField extends StatelessWidget {
         autocorrect: false,
         cursorColor: AppColors.mainBlue,
         decoration: InputDecoration(
-          errorStyle: const TextStyle(fontSize: 12),
+          errorStyle: const TextStyle(fontSize: 10),
           labelText: label,
           labelStyle: TextStyle(color: AppColors.lightGrey, fontSize: 16),
           floatingLabelStyle:
               TextStyle(color: AppColors.mainBlue, fontSize: 14),
+          enabledBorder: UnderlineInputBorder(
+            borderSide: BorderSide(width: 1, color: AppColors.mainBlue),
+          ),
           focusedBorder: OutlineInputBorder(
+            gapPadding: 6,
             borderRadius: BorderRadius.circular(5),
             borderSide: BorderSide(width: 1, color: AppColors.mainBlue),
           ),
           errorBorder: OutlineInputBorder(
+            gapPadding: 6,
             borderRadius: BorderRadius.circular(5),
             borderSide: const BorderSide(width: 1, color: Colors.red),
           ),
           focusedErrorBorder: OutlineInputBorder(
+            gapPadding: 6,
             borderRadius: BorderRadius.circular(5),
             borderSide: const BorderSide(width: 1, color: Colors.red),
           ),

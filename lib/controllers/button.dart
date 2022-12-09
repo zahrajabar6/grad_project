@@ -10,7 +10,7 @@ class MyButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
+    return TextButton(
         onPressed: onPress,
         child: Container(
           height: 50,

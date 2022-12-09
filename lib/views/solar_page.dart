@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:grad_project/controllers/app_bar.dart';
 import 'package:grad_project/controllers/background.dart';
 import 'package:grad_project/controllers/cleaning_system.dart';
 import 'package:grad_project/controllers/my_card.dart';
@@ -32,16 +33,8 @@ class SolarPage extends StatelessWidget {
           const Padding(
             padding: EdgeInsets.all(20),
             child: Align(
-              alignment: Alignment.topCenter,
-              child: Text(
-                'Solar Panel',
-                style: TextStyle(
-                    fontSize: 30,
-                    color: Colors.white,
-                    fontWeight: FontWeight.w600,
-                    letterSpacing: 3),
-              ),
-            ),
+                alignment: Alignment.topCenter,
+                child: MyAppBar(text: 'Solar Panel')),
           ),
 
           //the white container
@@ -52,9 +45,9 @@ class SolarPage extends StatelessWidget {
               decoration: const BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(25),
-                      topRight: Radius.circular(25))),
-              height: height * 0.78,
+                      topLeft: Radius.circular(15),
+                      topRight: Radius.circular(15))),
+              height: height * 0.73,
               width: width,
               child: SingleChildScrollView(
                 child: Column(

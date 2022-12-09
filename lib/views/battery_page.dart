@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:grad_project/controllers/app_bar.dart';
 import 'package:grad_project/controllers/background.dart';
+import 'package:grad_project/controllers/button.dart';
+import 'package:grad_project/views/login_page.dart';
 
 class BatteryPage extends StatelessWidget {
   const BatteryPage({Key? key}) : super(key: key);
@@ -22,13 +26,8 @@ class BatteryPage extends StatelessWidget {
             padding: EdgeInsets.all(20),
             child: Align(
               alignment: Alignment.topCenter,
-              child: Text(
-                'Battery',
-                style: TextStyle(
-                    fontSize: 30,
-                    color: Colors.white,
-                    fontWeight: FontWeight.w600,
-                    letterSpacing: 3),
+              child: MyAppBar(
+                text: 'Battery',
               ),
             ),
           ),
@@ -40,10 +39,15 @@ class BatteryPage extends StatelessWidget {
               decoration: const BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(25),
-                      topRight: Radius.circular(25))),
-              height: height * 0.78,
+                      topLeft: Radius.circular(15),
+                      topRight: Radius.circular(15))),
+              height: height * 0.73,
               width: width,
+              child: MyButton(
+                  text: 'temp logout',
+                  onPress: () {
+                    Get.to(const MyLoginPage());
+                  }),
             ),
           )
         ],
