@@ -47,7 +47,7 @@ class SolarPage extends StatelessWidget {
                   borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(15),
                       topRight: Radius.circular(15))),
-              height: height * 0.73,
+              height: height * 0.78,
               width: width,
               child: SingleChildScrollView(
                 child: Column(
