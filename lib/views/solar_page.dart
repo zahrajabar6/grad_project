@@ -19,7 +19,7 @@ class SolarPage extends StatelessWidget {
       ['Current', '10 A', 'current.png'],
       ['Voltage', '12 V', 'voltage.jpg'],
       ['Temperature', '15 C', 'temp.jpg'],
-      ['Humidity', '10 %', 'humidity2.jpg'],
+      ['Humidity', '10 %', 'hum.png'],
       ['Dust', 'Dusty', 'dust.JPG']
     ];
 
