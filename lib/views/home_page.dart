@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:grad_project/controllers/app_bar.dart';
 import 'package:grad_project/controllers/background.dart';
 import 'package:grad_project/controllers/colors.dart';
-import 'package:grad_project/controllers/rooms_card.dart';
+import 'package:grad_project/controllers/my_card.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -16,10 +16,10 @@ class HomePage extends StatelessWidget {
 
     //rooms
     final items = <dynamic>[
-      ['Living Room', 'livingroom.jpg', '4'],
-      ['Bedroom', 'bedroom.jpg', '4'],
-      ['Kitchen', 'kitchen2.jpg', '4'],
-      ['Bathroom', 'bathroom.jpg', '4']
+      ['Living Room', 'livingroom.jpg', '4 Devices'],
+      ['Bedroom', 'bedroom.jpg', '4 Devices'],
+      ['Kitchen', 'kitchen2.jpg', '4 Devices'],
+      ['Bathroom', 'bathroom.jpg', '4 Devices']
     ];
 
     return Scaffold(
@@ -59,19 +59,20 @@ class HomePage extends StatelessWidget {
                       ),
                       const SizedBox(height: 10),
                       Wrap(
-                          alignment: WrapAlignment.spaceBetween,
-                          direction: Axis.horizontal,
-                          spacing: 8,
-                          //Get the children from the item list
-                          children: items
-                              .map((e) => RoomsCard(
-                                    width: width,
-                                    height: height * 0.20,
-                                    roomName: e[0],
-                                    imageURL: e[1],
-                                    devicesNO: e[2],
-                                  ))
-                              .toList()),
+                        alignment: WrapAlignment.spaceBetween,
+                        direction: Axis.horizontal,
+                        spacing: 8,
+                        //Get the children from the item list
+                        children: items
+                            .map((e) => RoomsCard(
+                                  width: width,
+                                  height: height * 0.20,
+                                  text1: e[0],
+                                  imageURL: e[1],
+                                  text2: e[2],
+                                ))
+                            .toList(),
+                      ),
                     ],
                   ),
                 ),

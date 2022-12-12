@@ -16,11 +16,11 @@ class SolarPage extends StatelessWidget {
 
     //then we will use api to get these values
     final items = <dynamic>[
-      ['Current', '10 A'],
-      ['Voltage', '12 V'],
-      ['Temperature', '15 C'],
-      ['Humidity', '10 %'],
-      ['Dust', 'Dusty']
+      ['Current', '10 A', 'current.png'],
+      ['Voltage', '12 V', 'voltage.jpg'],
+      ['Temperature', '15 C', 'temp.jpg'],
+      ['Humidity', '10 %', 'humidity2.jpg'],
+      ['Dust', 'Dusty', 'dust.JPG']
     ];
 
     return Scaffold(
@@ -53,17 +53,20 @@ class SolarPage extends StatelessWidget {
                 child: Column(
                   children: [
                     Wrap(
-                        alignment: WrapAlignment.spaceBetween,
-                        direction: Axis.horizontal,
-                        spacing: 8,
-                        //Get the children from the item list
-                        children: items
-                            .map((e) => MyCard(
+                      alignment: WrapAlignment.spaceBetween,
+                      direction: Axis.horizontal,
+                      spacing: 8,
+                      //Get the children from the item list
+                      children: items
+                          .map((e) => RoomsCard(
                                 width: width,
                                 height: height * 0.20,
-                                parameter: e[0].toString(),
-                                value: e[1].toString()))
-                            .toList()),
+                                text1: e[0],
+                                imageURL: e[2],
+                                text2: e[1],
+                              ))
+                          .toList(),
+                    ),
                     CleaningSysCard(width: width, height: height)
                   ],
                 ),
