@@ -3,10 +3,10 @@ import 'package:grad_project/controllers/colors.dart';
 
 class CleaningSysCard extends StatefulWidget {
   const CleaningSysCard({
-    Key? key,
+    super.key,
     required this.width,
     required this.height,
-  }) : super(key: key);
+  });
 
   final double width;
   final double height;
@@ -21,7 +21,7 @@ class _CleaningSysCardState extends State<CleaningSysCard> {
   Widget build(BuildContext context) {
     return SizedBox(
       width: widget.width,
-      height: widget.height *0.1,
+      height: widget.height * 0.1,
       child: Card(
         color: Colors.white,
         elevation: 1.5,
@@ -30,11 +30,17 @@ class _CleaningSysCardState extends State<CleaningSysCard> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text("Cleaning System", style: TextStyle(fontSize: 26, color: AppColors.mainBlue, fontWeight: FontWeight.w500),),
+              Text(
+                "Cleaning System",
+                style: TextStyle(
+                    fontSize: 26,
+                    color: AppColors.mainBlue,
+                    fontWeight: FontWeight.w500),
+              ),
               Switch.adaptive(
                   activeColor: AppColors.mainBlue,
                   value: value,
-                  onChanged: (value){
+                  onChanged: (value) {
                     setState(() {
                       this.value = value;
                     });

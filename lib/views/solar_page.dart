@@ -5,7 +5,7 @@ import 'package:grad_project/controllers/cleaning_system.dart';
 import 'package:grad_project/controllers/my_card.dart';
 
 class SolarPage extends StatelessWidget {
-  const SolarPage({Key? key}) : super(key: key);
+  const SolarPage({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:grad_project/controllers/colors.dart';
 
 class MyButton extends StatelessWidget {
-  const MyButton({Key? key, required this.text, required this.onPress})
-      : super(key: key);
+  const MyButton({super.key, required this.text, required this.onPress});
 
   final String text;
   final VoidCallback onPress;

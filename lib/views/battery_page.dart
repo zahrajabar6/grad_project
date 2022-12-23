@@ -6,7 +6,7 @@ import 'package:grad_project/controllers/button.dart';
 import 'package:grad_project/views/login_page.dart';
 
 class BatteryPage extends StatelessWidget {
-  const BatteryPage({Key? key}) : super(key: key);
+  const BatteryPage({super.key});
 
   @override
   Widget build(BuildContext context) {

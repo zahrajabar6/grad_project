@@ -3,13 +3,13 @@ import 'package:grad_project/controllers/colors.dart';
 
 class RoomsCard extends StatelessWidget {
   const RoomsCard({
-    Key? key,
+    super.key,
     required this.width,
     required this.height,
     required this.text1,
     required this.imageURL,
     required this.text2,
-  }) : super(key: key);
+  });
 
   final double width;
   final double height;

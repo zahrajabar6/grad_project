@@ -6,7 +6,7 @@ import 'package:grad_project/views/solar_page.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 
 class MyPages extends StatefulWidget {
-  const MyPages({Key? key}) : super(key: key);
+  const MyPages({super.key});
 
   @override
   State<MyPages> createState() => _MyPagesState();

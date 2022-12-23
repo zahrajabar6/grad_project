@@ -5,7 +5,7 @@ import 'package:grad_project/controllers/colors.dart';
 import 'package:grad_project/controllers/my_card.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
+  const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {

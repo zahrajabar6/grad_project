@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
 
 class MyAppBar extends StatelessWidget {
-  const MyAppBar({
-    Key? key,
-    required this.text,
-  }) : super(key: key);
+  const MyAppBar({super.key, required this.text});
   final String text;
   @override
   Widget build(BuildContext context) {

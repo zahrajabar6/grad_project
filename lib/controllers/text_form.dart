@@ -3,13 +3,13 @@ import 'package:grad_project/controllers/colors.dart';
 
 class MyTextFormField extends StatelessWidget {
   const MyTextFormField({
-    Key? key,
+    super.key,
     required this.label,
     required this.validator,
     required this.obsecure,
     this.onChanged,
     required this.height,
-  }) : super(key: key);
+  });
 
   final String label;
   final FormFieldValidator<String> validator;

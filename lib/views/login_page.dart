@@ -7,7 +7,7 @@ import 'package:grad_project/controllers/text_form.dart';
 import 'package:grad_project/views/main_page.dart';
 
 class MyLoginPage extends StatefulWidget {
-  const MyLoginPage({Key? key}) : super(key: key);
+  const MyLoginPage({super.key});
 
   @override
   State<MyLoginPage> createState() => _MyLoginPageState();
