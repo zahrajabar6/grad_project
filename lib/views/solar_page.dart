@@ -16,11 +16,11 @@ class SolarPage extends StatelessWidget {
 
     //then we will use api to get these values
     final items = <dynamic>[
-      ['Current', '10 A', 'current.png'],
+      ['Current', '10 A', 'current.jpg'],
       ['Voltage', '12 V', 'voltage.jpg'],
       ['Temperature', '15 C', 'temp.jpg'],
-      ['Humidity', '10 %', 'hum.png'],
-      ['Dust', 'Dusty', 'dust.JPG']
+      ['Humidity', '10 %', 'humidity2.jpg'],
+      ['Dust', 'Dusty', 'dust.jpg']
     ];
 
     return Scaffold(
