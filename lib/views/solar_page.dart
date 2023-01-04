@@ -20,7 +20,7 @@ class SolarPage extends StatelessWidget {
       ['Voltage', '12 V', 'voltage.jpg'],
       ['Temperature', '15 C', 'temp.jpg'],
       ['Humidity', '10 %', 'humidity2.jpg'],
-      ['Dust', 'Dusty', 'dust.jpg']
+      ['Dust', 'Dusty', 'dust.JPG']
     ];
 
     return Scaffold(
@@ -44,9 +44,10 @@ class SolarPage extends StatelessWidget {
               padding: const EdgeInsets.all(15),
               decoration: const BoxDecoration(
                   color: Colors.white,
-                  borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(15),
-                      topRight: Radius.circular(15))),
+                  // borderRadius: BorderRadius.only(
+                  //     topLeft: Radius.circular(15),
+                  //     topRight: Radius.circular(15)),
+              ),
               height: height * 0.78,
               width: width,
               child: SingleChildScrollView(
@@ -78,3 +79,4 @@ class SolarPage extends StatelessWidget {
     );
   }
 }
+

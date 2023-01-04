@@ -33,7 +33,7 @@ class _CleaningSysCardState extends State<CleaningSysCard> {
               Text(
                 "Cleaning System",
                 style: TextStyle(
-                    fontSize: 26,
+                    fontSize: 24,
                     color: AppColors.mainBlue,
                     fontWeight: FontWeight.w500),
               ),
