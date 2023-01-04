@@ -44,9 +44,9 @@ class SolarPage extends StatelessWidget {
               padding: const EdgeInsets.all(15),
               decoration: const BoxDecoration(
                   color: Colors.white,
-                  // borderRadius: BorderRadius.only(
-                  //     topLeft: Radius.circular(15),
-                  //     topRight: Radius.circular(15)),
+                  borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(15),
+                      topRight: Radius.circular(15)),
               ),
               height: height * 0.78,
               width: width,
@@ -79,4 +79,3 @@ class SolarPage extends StatelessWidget {
     );
   }
 }
-
