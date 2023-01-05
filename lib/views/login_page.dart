@@ -53,7 +53,7 @@ class _MyLoginPageState extends State<MyLoginPage> {
                     const SizedBox(height: 10),
                     SizedBox(
                       width: width * 0.90,
-                      height: height * 0.45,
+                      height: height * 0.38,
                       child: Card(
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10.0)),

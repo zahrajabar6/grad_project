@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:grad_project/controllers/app_bar.dart';
-import 'package:grad_project/controllers/background.dart';
 import 'package:grad_project/controllers/cleaning_system.dart';
+import 'package:grad_project/controllers/colors.dart';
 import 'package:grad_project/controllers/my_card.dart';
+
+import '../controllers/popup_menu.dart';
 
 class SolarPage extends StatelessWidget {
   const SolarPage({super.key});
@@ -24,57 +25,43 @@ class SolarPage extends StatelessWidget {
     ];
 
     return Scaffold(
-      body: Stack(
-        children: [
-          //set up the background image
-          const Background(),
-
-          //the app bar
-          const Padding(
-            padding: EdgeInsets.all(20),
-            child: Align(
-                alignment: Alignment.topCenter,
-                child: MyAppBar(text: 'Solar Panel')),
+      appBar: AppBar(
+        backgroundColor: AppColors.mainBlue,
+        title: const Text('Solar Panel', style: TextStyle(fontSize: 26),),
+        leading: const PopUpMenu(),
+        elevation: 2,
+      ),
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(15),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                ' Solar Reads',
+                style:
+                TextStyle(color: AppColors.mainBlue, fontSize: 24),
+              ),
+              const SizedBox(height: 10),
+              Wrap(
+                alignment: WrapAlignment.spaceBetween,
+                direction: Axis.horizontal,
+                spacing: 8,
+                //Get the children from the item list
+                children: items
+                    .map((e) => RoomsCard(
+                  width: width,
+                  height: height * 0.20,
+                  text1: e[0],
+                  imageURL: e[2],
+                  text2: e[1],
+                ))
+                    .toList(),
+              ),
+              CleaningSysCard(width: width, height: height)
+            ],
           ),
-
-          //the white container
-          Align(
-            alignment: Alignment.bottomCenter,
-            child: Container(
-              padding: const EdgeInsets.all(15),
-              decoration: const BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(15),
-                      topRight: Radius.circular(15)),
-              ),
-              height: height * 0.78,
-              width: width,
-              child: SingleChildScrollView(
-                child: Column(
-                  children: [
-                    Wrap(
-                      alignment: WrapAlignment.spaceBetween,
-                      direction: Axis.horizontal,
-                      spacing: 8,
-                      //Get the children from the item list
-                      children: items
-                          .map((e) => RoomsCard(
-                                width: width,
-                                height: height * 0.20,
-                                text1: e[0],
-                                imageURL: e[2],
-                                text2: e[1],
-                              ))
-                          .toList(),
-                    ),
-                    CleaningSysCard(width: width, height: height)
-                  ],
-                ),
-              ),
-            ),
-          )
-        ],
+        ),
       ),
     );
   }

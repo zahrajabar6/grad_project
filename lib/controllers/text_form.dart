@@ -46,7 +46,7 @@ class MyTextFormField extends StatelessWidget {
             borderSide: BorderSide(width: 1, color: AppColors.mainBlue),
           ),
           errorBorder: OutlineInputBorder(
-            gapPadding: 6,
+            gapPadding: 8,
             borderRadius: BorderRadius.circular(5),
             borderSide: const BorderSide(width: 1, color: Colors.red),
           ),
