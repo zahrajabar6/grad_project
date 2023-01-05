@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:grad_project/controllers/background.dart';
 import 'package:grad_project/controllers/button.dart';
-import 'package:grad_project/controllers/local_db.dart';
+import 'package:grad_project/local%20database/local_db.dart';
 import 'package:grad_project/controllers/text_form.dart';
 import 'package:grad_project/views/main_page.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class MyLoginPage extends StatefulWidget {
   const MyLoginPage({super.key});
@@ -89,10 +90,13 @@ class _MyLoginPageState extends State<MyLoginPage> {
                               SizedBox(height: height * 0.04),
                               MyButton(
                                 text: "Login",
-                                onPress: () {
+                                onPress: () async {
                                   FocusScope.of(context).unfocus();
                                   if (formKey.currentState!.validate()) {
                                     //if key and password are valid navigate to the pages
+                                    final prefs =
+                                        await SharedPreferences.getInstance();
+                                    prefs.setBool('isLogin', true);
                                     Get.to(const MyPages());
                                   }
                                 },
