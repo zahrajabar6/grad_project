@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:grad_project/controllers/colors.dart';
+import 'package:grad_project/constant.dart';
 import 'package:grad_project/views/battery_page.dart';
 import 'package:grad_project/views/home_page.dart';
 import 'package:grad_project/views/solar_page.dart';
@@ -41,10 +41,10 @@ class _MyPagesState extends State<MyPages> {
             ),
             child: GNav(
                 gap: 8,
-                color: AppColors.lightGrey,
+                color: lightGrey,
                 backgroundColor: Colors.white,
                 activeColor: Colors.white,
-                tabBackgroundColor: AppColors.mainBlue,
+                tabBackgroundColor: mainBlue,
                 tabMargin: const EdgeInsets.all(8),
                 padding: const EdgeInsets.all(10),
                 selectedIndex: index,

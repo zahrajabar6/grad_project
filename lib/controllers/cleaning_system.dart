@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:grad_project/controllers/colors.dart';
+import 'package:grad_project/constant.dart';
 
 class CleaningSysCard extends StatefulWidget {
   const CleaningSysCard({
@@ -30,15 +30,12 @@ class _CleaningSysCardState extends State<CleaningSysCard> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text(
+              const Text(
                 "Cleaning System",
-                style: TextStyle(
-                    fontSize: 24,
-                    color: AppColors.mainBlue,
-                    fontWeight: FontWeight.w500),
+                style: cardTitleTextStyle,
               ),
               Switch.adaptive(
-                  activeColor: AppColors.mainBlue,
+                  activeColor: mainBlue,
                   value: value,
                   onChanged: (value) {
                     setState(() {

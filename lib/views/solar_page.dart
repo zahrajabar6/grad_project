@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:grad_project/constant.dart';
 import 'package:grad_project/controllers/cleaning_system.dart';
-import 'package:grad_project/controllers/colors.dart';
 import 'package:grad_project/controllers/my_card.dart';
 
 import '../controllers/popup_menu.dart';
@@ -38,9 +38,9 @@ class SolarPage extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
+              const Text(
                 ' Solar Reads',
-                style: TextStyle(color: AppColors.mainBlue, fontSize: 24),
+                style: pageLabelTextStyle,
               ),
               const SizedBox(height: 10),
               Wrap(

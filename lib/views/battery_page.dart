@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:grad_project/controllers/colors.dart';
+import 'package:grad_project/constant.dart';
 import 'package:grad_project/controllers/popup_menu.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 
@@ -24,22 +24,16 @@ class BatteryPage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(
+            const Text(
               'Battery State',
-              style: TextStyle(
-                  color: AppColors.mainBlue,
-                  fontSize: 30,
-                  fontWeight: FontWeight.w400),
+              style: batteryLabelTextStyle,
             ),
             const SizedBox(
               height: 10,
             ),
-            Text(
+            const Text(
               'Charging',
-              style: TextStyle(
-                  color: AppColors.lightGrey,
-                  fontSize: 25,
-                  fontWeight: FontWeight.normal),
+              style: batteryStateTextStyle,
             ),
             const SizedBox(
               height: 25,
@@ -48,17 +42,14 @@ class BatteryPage extends StatelessWidget {
               animation: true,
               animationDuration: 1000,
               radius: 125,
-              progressColor: AppColors.mainBlue,
+              progressColor: mainBlue,
               percent: percent,
               lineWidth: 25,
               backgroundColor: Colors.blue.shade100,
               circularStrokeCap: CircularStrokeCap.round,
               center: Text(
                 "${(percent * 100).toInt()}%",
-                style: TextStyle(
-                    color: AppColors.lightGrey,
-                    fontSize: 65,
-                    fontWeight: FontWeight.w400),
+                style: batteryPercentTextStyle,
               ),
             ),
           ],

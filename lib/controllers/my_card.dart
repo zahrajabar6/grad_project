@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:grad_project/controllers/colors.dart';
+import 'package:grad_project/constant.dart';
 
 class RoomsCard extends StatelessWidget {
   const RoomsCard({
@@ -45,20 +45,14 @@ class RoomsCard extends StatelessWidget {
                   children: [
                     Text(
                       text1,
-                      style: TextStyle(
-                          fontSize: 22,
-                          color: AppColors.mainBlue,
-                          fontWeight: FontWeight.w500),
+                      style: cardTitleTextStyle,
                     ),
                     SizedBox(
                       height: height * 0.08,
                     ),
                     Text(
                       text2,
-                      style: TextStyle(
-                          fontSize: 18,
-                          color: AppColors.lightGrey,
-                          fontWeight: FontWeight.w500),
+                      style: cardTextTextStyle,
                     )
                   ],
                 ),

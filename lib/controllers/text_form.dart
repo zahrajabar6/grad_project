@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:grad_project/controllers/colors.dart';
+import 'package:grad_project/constant.dart';
 
 class MyTextFormField extends StatelessWidget {
   const MyTextFormField({
@@ -30,20 +30,19 @@ class MyTextFormField extends StatelessWidget {
         textInputAction: TextInputAction.next,
         enableSuggestions: false,
         autocorrect: false,
-        cursorColor: AppColors.mainBlue,
+        cursorColor: mainBlue,
         decoration: InputDecoration(
           errorStyle: const TextStyle(fontSize: 10),
           labelText: label,
-          labelStyle: TextStyle(color: AppColors.lightGrey, fontSize: 16),
-          floatingLabelStyle:
-              TextStyle(color: AppColors.mainBlue, fontSize: 14),
-          enabledBorder: UnderlineInputBorder(
-            borderSide: BorderSide(width: 1, color: AppColors.mainBlue),
+          labelStyle: const TextStyle(color: lightGrey, fontSize: 16),
+          floatingLabelStyle: const TextStyle(color: mainBlue, fontSize: 14),
+          enabledBorder: const UnderlineInputBorder(
+            borderSide: BorderSide(width: 1, color: mainBlue),
           ),
           focusedBorder: OutlineInputBorder(
             gapPadding: 6,
             borderRadius: BorderRadius.circular(5),
-            borderSide: BorderSide(width: 1, color: AppColors.mainBlue),
+            borderSide: const BorderSide(width: 1, color: mainBlue),
           ),
           errorBorder: OutlineInputBorder(
             gapPadding: 8,

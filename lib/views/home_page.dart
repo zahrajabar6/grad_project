@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:grad_project/controllers/colors.dart';
+import 'package:grad_project/constant.dart';
 import 'package:grad_project/controllers/my_card.dart';
 import 'package:grad_project/controllers/popup_menu.dart';
 
@@ -35,10 +35,7 @@ class HomePage extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                ' Rooms',
-                style: TextStyle(color: AppColors.mainBlue, fontSize: 24),
-              ),
+              const Text(' Rooms', style: pageLabelTextStyle),
               const SizedBox(height: 10),
               Wrap(
                 alignment: WrapAlignment.spaceBetween,
