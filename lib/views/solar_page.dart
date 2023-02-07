@@ -26,10 +26,11 @@ class SolarPage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: AppColors.mainBlue,
-        title: const Text('Solar Panel', style: TextStyle(fontSize: 26),),
+        title: const Text(
+          'Solar Panel',
+          style: TextStyle(fontSize: 26),
+        ),
         leading: const PopUpMenu(),
-        elevation: 2,
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -39,8 +40,7 @@ class SolarPage extends StatelessWidget {
             children: [
               Text(
                 ' Solar Reads',
-                style:
-                TextStyle(color: AppColors.mainBlue, fontSize: 24),
+                style: TextStyle(color: AppColors.mainBlue, fontSize: 24),
               ),
               const SizedBox(height: 10),
               Wrap(
@@ -50,12 +50,12 @@ class SolarPage extends StatelessWidget {
                 //Get the children from the item list
                 children: items
                     .map((e) => RoomsCard(
-                  width: width,
-                  height: height * 0.20,
-                  text1: e[0],
-                  imageURL: e[2],
-                  text2: e[1],
-                ))
+                          width: width,
+                          height: height * 0.20,
+                          text1: e[0],
+                          imageURL: e[2],
+                          text2: e[1],
+                        ))
                     .toList(),
               ),
               CleaningSysCard(width: width, height: height)

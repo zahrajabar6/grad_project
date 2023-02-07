@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:grad_project/controllers/colors.dart';
 import 'package:grad_project/views/login_page.dart';
 import 'package:grad_project/views/main_page.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -22,10 +23,14 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        fontFamily: "Lato",
-        primarySwatch: Colors.blue,
-        platform: TargetPlatform.iOS,
-      ),
+          fontFamily: "Lato",
+          primarySwatch: Colors.blue,
+          platform: TargetPlatform.iOS,
+          appBarTheme: AppBarTheme(
+            centerTitle: true,
+            backgroundColor: AppColors.mainBlue,
+            elevation: 2,
+          )),
       home: isLogin ? const MyPages() : const MyLoginPage(),
     );
   }

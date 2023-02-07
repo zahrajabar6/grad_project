@@ -23,10 +23,11 @@ class HomePage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: AppColors.mainBlue,
-        title: const Text('Home', style: TextStyle(fontSize: 26),),
+        title: const Text(
+          'Home',
+          style: TextStyle(fontSize: 26),
+        ),
         leading: const PopUpMenu(),
-        elevation: 2,
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -36,8 +37,7 @@ class HomePage extends StatelessWidget {
             children: [
               Text(
                 ' Rooms',
-                style:
-                TextStyle(color: AppColors.mainBlue, fontSize: 24),
+                style: TextStyle(color: AppColors.mainBlue, fontSize: 24),
               ),
               const SizedBox(height: 10),
               Wrap(
@@ -47,12 +47,12 @@ class HomePage extends StatelessWidget {
                 //Get the children from the item list
                 children: items
                     .map((e) => RoomsCard(
-                  width: width,
-                  height: height * 0.20,
-                  text1: e[0],
-                  imageURL: e[1],
-                  text2: e[2],
-                ))
+                          width: width,
+                          height: height * 0.20,
+                          text1: e[0],
+                          imageURL: e[1],
+                          text2: e[2],
+                        ))
                     .toList(),
               ),
             ],

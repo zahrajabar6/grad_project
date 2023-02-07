@@ -8,22 +8,21 @@ class BatteryPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     //temp percent
     var percent = 0.40;
 
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: AppColors.mainBlue,
-        title: const Text('Battery', style: TextStyle(fontSize: 26),),
+        title: const Text(
+          'Battery',
+          style: TextStyle(fontSize: 26),
+        ),
         leading: const PopUpMenu(),
-        elevation: 2,
       ),
       body: SizedBox(
         width: double.maxFinite,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-
           children: [
             Text(
               'Battery State',
@@ -46,7 +45,7 @@ class BatteryPage extends StatelessWidget {
               height: 25,
             ),
             CircularPercentIndicator(
-              animation:true,
+              animation: true,
               animationDuration: 1000,
               radius: 125,
               progressColor: AppColors.mainBlue,
