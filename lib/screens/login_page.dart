@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:grad_project/controllers/background.dart';
-import 'package:grad_project/controllers/button.dart';
-import 'package:grad_project/local%20database/local_db.dart';
-import 'package:grad_project/controllers/text_form.dart';
-import 'package:grad_project/views/main_page.dart';
+import 'package:grad_project/constant.dart';
+import 'package:grad_project/components/background.dart';
+import 'package:grad_project/components/button.dart';
+import 'package:grad_project/components/text_form.dart';
+import 'package:grad_project/screens/main_page.dart';
+import 'package:grad_project/services/validation.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class MyLoginPage extends StatefulWidget {
@@ -38,19 +38,10 @@ class _MyLoginPageState extends State<MyLoginPage> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const Text('Welcome!',
-                        style: TextStyle(
-                            fontSize: 30,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white,
-                            letterSpacing: 4)),
+                    const Text('Welcome!', style: loginLableTextStyle),
                     const SizedBox(height: 5),
                     const Text(' Make the sun work for you..',
-                        style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.w200,
-                          color: Colors.white,
-                        )),
+                        style: loginTextTextStyle),
                     const SizedBox(height: 10),
                     SizedBox(
                       width: width * 0.90,
@@ -67,26 +58,18 @@ class _MyLoginPageState extends State<MyLoginPage> {
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               MyTextFormField(
-                                  height: height,
-                                  label: 'Key',
-                                  obsecure: false,
-                                  validator: (x) {
-                                    if (x != LocalDB.key) {
-                                      return "Wrong key";
-                                    }
-                                    return null;
-                                  }),
+                                height: height,
+                                label: 'Key',
+                                obsecure: false,
+                                validator: keyValidation,
+                              ),
                               SizedBox(height: height * 0.04),
                               MyTextFormField(
-                                  height: height,
-                                  label: 'Password',
-                                  obsecure: true,
-                                  validator: (x) {
-                                    if (x != LocalDB.password) {
-                                      return "Wrong password";
-                                    }
-                                    return null;
-                                  }),
+                                height: height,
+                                label: 'Password',
+                                obsecure: true,
+                                validator: passwordValidation,
+                              ),
                               SizedBox(height: height * 0.04),
                               MyButton(
                                 text: "Login",
@@ -97,7 +80,13 @@ class _MyLoginPageState extends State<MyLoginPage> {
                                     final prefs =
                                         await SharedPreferences.getInstance();
                                     prefs.setBool('isLogin', true);
-                                    Get.to(const MyPages());
+                                    // ignore: use_build_context_synchronously
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              const MyPages()),
+                                    );
                                   }
                                 },
                               )

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:grad_project/constant.dart';
-import 'package:grad_project/controllers/popup_menu.dart';
+import 'package:grad_project/components/popup_menu.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 
 class BatteryPage extends StatelessWidget {
@@ -13,10 +13,7 @@ class BatteryPage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          'Battery',
-          style: TextStyle(fontSize: 26),
-        ),
+        title: const Text('Battery', style: appBarTextStyle),
         leading: const PopUpMenu(),
       ),
       body: SizedBox(
@@ -24,20 +21,10 @@ class BatteryPage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Text(
-              'Battery State',
-              style: batteryLabelTextStyle,
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            const Text(
-              'Charging',
-              style: batteryStateTextStyle,
-            ),
-            const SizedBox(
-              height: 25,
-            ),
+            const Text('Battery State', style: batteryLabelTextStyle),
+            const SizedBox(height: 10),
+            const Text('Charging', style: batteryStateTextStyle),
+            const SizedBox(height: 25),
             CircularPercentIndicator(
               animation: true,
               animationDuration: 1000,

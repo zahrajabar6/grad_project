@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:grad_project/views/login_page.dart';
-import 'package:grad_project/views/main_page.dart';
+import 'package:grad_project/screens/login_page.dart';
+import 'package:grad_project/screens/main_page.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'constant.dart';
@@ -21,7 +20,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of the application.
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
       //app theme
       theme: ThemeData(

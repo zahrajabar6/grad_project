@@ -23,3 +23,17 @@ const batteryPercentTextStyle =
     TextStyle(color: lightGrey, fontSize: 65, fontWeight: FontWeight.w400);
 
 const pageLabelTextStyle = TextStyle(color: mainBlue, fontSize: 24);
+
+const loginLableTextStyle = TextStyle(
+    fontSize: 30,
+    fontWeight: FontWeight.bold,
+    color: Colors.white,
+    letterSpacing: 4);
+
+const loginTextTextStyle = TextStyle(
+  fontSize: 20,
+  fontWeight: FontWeight.w200,
+  color: Colors.white,
+);
+
+const appBarTextStyle = TextStyle(fontSize: 26);

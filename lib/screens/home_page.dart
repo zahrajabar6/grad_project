@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:grad_project/constant.dart';
-import 'package:grad_project/controllers/my_card.dart';
-import 'package:grad_project/controllers/popup_menu.dart';
+import 'package:grad_project/components/my_card.dart';
+import 'package:grad_project/components/popup_menu.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -18,15 +18,11 @@ class HomePage extends StatelessWidget {
       ['Living Room', 'livingroom.jpg', '4 Devices'],
       ['Bedroom', 'bedroom.jpg', '4 Devices'],
       ['Kitchen', 'kitchen2.jpg', '4 Devices'],
-      ['Bathroom', 'bathroom.jpg', '4 Devices']
     ];
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          'Home',
-          style: TextStyle(fontSize: 26),
-        ),
+        title: const Text('Home', style: appBarTextStyle),
         leading: const PopUpMenu(),
       ),
       body: SingleChildScrollView(

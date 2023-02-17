@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:grad_project/constant.dart';
-import 'package:grad_project/controllers/cleaning_system.dart';
-import 'package:grad_project/controllers/my_card.dart';
+import 'package:grad_project/components/cleaning_system.dart';
+import 'package:grad_project/components/my_card.dart';
 
-import '../controllers/popup_menu.dart';
+import '../components/popup_menu.dart';
 
 class SolarPage extends StatelessWidget {
   const SolarPage({super.key});
@@ -26,10 +26,7 @@ class SolarPage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          'Solar Panel',
-          style: TextStyle(fontSize: 26),
-        ),
+        title: const Text('Solar Panel', style: appBarTextStyle),
         leading: const PopUpMenu(),
       ),
       body: SingleChildScrollView(
@@ -38,10 +35,7 @@ class SolarPage extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Text(
-                ' Solar Reads',
-                style: pageLabelTextStyle,
-              ),
+              const Text(' Solar Reads', style: pageLabelTextStyle),
               const SizedBox(height: 10),
               Wrap(
                 alignment: WrapAlignment.spaceBetween,

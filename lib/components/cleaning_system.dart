@@ -30,10 +30,7 @@ class _CleaningSysCardState extends State<CleaningSysCard> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              const Text(
-                "Cleaning System",
-                style: cardTitleTextStyle,
-              ),
+              const Text("Cleaning System", style: cardTitleTextStyle),
               Switch.adaptive(
                   activeColor: mainBlue,
                   value: value,
