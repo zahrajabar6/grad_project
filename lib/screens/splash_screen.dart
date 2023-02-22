@@ -17,12 +17,14 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   route() {
-    Navigator.pushReplacementNamed(context, WelcomeScreen.id);
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => const WelcomeScreen()),
+    );
   }
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     startTime();
   }
@@ -35,7 +37,7 @@ class _SplashScreenState extends State<SplashScreen> {
           child: SizedBox(
         height: 150,
         child: Lottie.network(
-            'https://assets4.lottiefiles.com/private_files/lf30_3vhjjbex.json'),
+            'https://assets10.lottiefiles.com/datafiles/ugFV3T9Zi676bvx/data.json'),
       )),
     );
   }

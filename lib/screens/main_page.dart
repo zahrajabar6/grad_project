@@ -2,11 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:grad_project/constant.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:grad_project/screens/battery_page.dart';
+import 'package:grad_project/screens/chat_screen.dart';
 import 'package:grad_project/screens/home_page.dart';
 import 'package:grad_project/screens/solar_page.dart';
 
 class MyPages extends StatefulWidget {
   const MyPages({super.key});
+  static String id = 'mainPages';
   @override
   State<MyPages> createState() => _MyPagesState();
 }
@@ -16,13 +18,19 @@ class _MyPagesState extends State<MyPages> {
   int index = 1;
 
   //list of pages
-  final screens = [const HomePage(), const SolarPage(), const BatteryPage()];
+  final screens = [
+    const HomePage(),
+    const SolarPage(),
+    const BatteryPage(),
+    const ChatScreen()
+  ];
 
   //list of navigation bar content
   final items = <dynamic>[
     ['Home', Icons.home_rounded],
     ['Solar', Icons.solar_power_rounded],
-    ['Battery', Icons.battery_full_rounded]
+    ['Battery', Icons.battery_full_rounded],
+    ['Chat', Icons.chat_bubble_rounded]
   ];
 
   @override

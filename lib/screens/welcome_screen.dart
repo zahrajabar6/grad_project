@@ -14,11 +14,6 @@ class WelcomeScreen extends StatefulWidget {
 class _WelcomeScreenState extends State<WelcomeScreen>
     with SingleTickerProviderStateMixin {
   @override
-  void initState() {
-    super.initState();
-  }
-
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
@@ -30,17 +25,6 @@ class _WelcomeScreenState extends State<WelcomeScreen>
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
-              Hero(
-                tag: 'logo',
-                child: SizedBox(
-                  height: 200,
-                  child: Lottie.network(
-                      'https://assets9.lottiefiles.com/packages/lf20_12iwjK.json'),
-                ),
-              ),
-              const SizedBox(
-                height: 20.0,
-              ),
               const Text(
                 'Welcome..',
                 textAlign: TextAlign.center,
@@ -57,8 +41,19 @@ class _WelcomeScreenState extends State<WelcomeScreen>
               const SizedBox(
                 height: 20.0,
               ),
+              Hero(
+                tag: 'logo',
+                child: SizedBox(
+                  height: 300,
+                  child: Lottie.network(
+                      'https://assets10.lottiefiles.com/datafiles/ugFV3T9Zi676bvx/data.json'),
+                ),
+              ),
+              const SizedBox(
+                height: 20.0,
+              ),
               MyButton(
-                text: 'Log In',
+                text: 'Get Started',
                 onPress: () {
                   Navigator.push(
                       context,

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+
 import 'package:grad_project/screens/splash_screen.dart';
 
-import 'package:grad_project/screens/welcome_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'constant.dart';
@@ -36,11 +36,7 @@ class MyApp extends StatelessWidget {
       ),
       //to determine if the user signed in or not
       //home: isLogin ? const MyPages() : const MyLoginPage(),\
-      initialRoute: SplashScreen.id,
-      routes: {
-        SplashScreen.id: (context) => const SplashScreen(),
-        WelcomeScreen.id: (context) => const WelcomeScreen()
-      },
+      home: const SplashScreen(),
     );
   }
 }

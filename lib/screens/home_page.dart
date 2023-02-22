@@ -18,6 +18,7 @@ class HomePage extends StatelessWidget {
       ['Living Room', 'livingroom.jpg', '4 Devices'],
       ['Bedroom', 'bedroom.jpg', '4 Devices'],
       ['Kitchen', 'kitchen2.jpg', '4 Devices'],
+      ['Bedroom', 'bedroom.jpg', '4 Devices'],
     ];
 
     return Scaffold(
