@@ -3,7 +3,6 @@ import 'package:grad_project/components/background.dart';
 import 'package:grad_project/components/button.dart';
 import 'package:grad_project/constant.dart';
 import 'package:grad_project/screens/main_page.dart';
-import 'package:lottie/lottie.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -38,9 +37,8 @@ class _LoginScreenState extends State<LoginScreen> {
                     child: Hero(
                       tag: 'logo',
                       child: SizedBox(
-                        height: 150.0,
-                        // child: Image.asset('assets/images/logo3.png'),
-                        child: Image.asset('assets/images/cloudsun.png'),
+                        height: 130.0,
+                        child: Image.asset('assets/images/sun.png'),
                       ),
                     ),
                   ),

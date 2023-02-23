@@ -23,7 +23,9 @@ class _WelcomeScreenState extends State<WelcomeScreen>
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Image.asset('assets/images/cloudsun.png'),
+                Hero(
+                    tag: 'logo',
+                    child: Image.asset('assets/images/cloudsun.png')),
                 const SizedBox(
                   height: 30.0,
                 ),
@@ -38,7 +40,7 @@ class _WelcomeScreenState extends State<WelcomeScreen>
                 Material(
                   elevation: 1.0,
                   color: Colors.blue.shade50,
-                  borderRadius: BorderRadius.circular(50.0),
+                  borderRadius: BorderRadius.circular(40.0),
                   child: MaterialButton(
                       onPressed: () {
                         Navigator.push(
@@ -47,8 +49,8 @@ class _WelcomeScreenState extends State<WelcomeScreen>
                               builder: (context) => const LoginScreen()),
                         );
                       },
-                      minWidth: 60,
-                      height: 60,
+                      minWidth: 55,
+                      height: 55,
                       child: const Icon(
                         Icons.arrow_forward,
                         color: mainBlue,

@@ -32,7 +32,7 @@ class BatteryPage extends StatelessWidget {
               progressColor: mainBlue,
               percent: percent,
               lineWidth: 25,
-              backgroundColor: Colors.blue.shade100,
+              backgroundColor: Colors.blue.shade50,
               circularStrokeCap: CircularStrokeCap.round,
               center: Text(
                 "${(percent * 100).toInt()}%",
