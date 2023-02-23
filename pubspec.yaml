@@ -51,6 +51,6 @@ flutter:
     - assets/images/
 
   fonts:
-    - family: Lato
+    - family: Lora
       fonts:
-         - asset: assets/fonts/Lato-Regular.ttf
+         - asset: assets/fonts/Lora-Regular.ttf

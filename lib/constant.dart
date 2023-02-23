@@ -3,7 +3,7 @@
 import 'package:flutter/material.dart';
 
 const Color lightGrey = Color(0xffb0b2b2);
-const Color mainBlue = Color(0xff00adee);
+const Color mainBlue = Color(0xff5889B5);
 const buttonTextStyle =
     TextStyle(fontSize: 22, fontWeight: FontWeight.w400, color: Colors.white);
 
@@ -31,9 +31,9 @@ const loginLableTextStyle = TextStyle(
     letterSpacing: 4);
 
 const loginTextTextStyle = TextStyle(
-  fontSize: 20,
-  fontWeight: FontWeight.w200,
-  color: Colors.black54,
+  fontSize: 22,
+  fontWeight: FontWeight.w300,
+  color: Colors.white,
 );
 
 const appBarTextStyle = TextStyle(fontSize: 26);

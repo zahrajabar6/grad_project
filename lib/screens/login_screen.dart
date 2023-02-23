@@ -38,15 +38,14 @@ class _LoginScreenState extends State<LoginScreen> {
                     child: Hero(
                       tag: 'logo',
                       child: SizedBox(
-                        height: 200.0,
+                        height: 150.0,
                         // child: Image.asset('assets/images/logo3.png'),
-                        child: Lottie.network(
-                            'https://assets10.lottiefiles.com/datafiles/ugFV3T9Zi676bvx/data.json'),
+                        child: Image.asset('assets/images/cloudsun.png'),
                       ),
                     ),
                   ),
                   const SizedBox(
-                    height: 20,
+                    height: 40,
                   ),
                   TextField(
                     textAlign: TextAlign.center,

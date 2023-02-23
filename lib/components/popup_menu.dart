@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:grad_project/screens/login_page.dart';
+import 'package:grad_project/screens/login_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class PopUpMenu extends StatefulWidget {
@@ -34,7 +34,7 @@ class _PopUpMenuState extends State<PopUpMenu> {
             // ignore: use_build_context_synchronously
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => const MyLoginPage()),
+              MaterialPageRoute(builder: (context) => const LoginScreen()),
             );
           }
         });

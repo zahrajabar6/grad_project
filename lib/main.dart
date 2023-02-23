@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:grad_project/screens/splash_screen.dart';
+import 'package:grad_project/screens/welcome_screen.dart';
 
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -25,8 +26,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       //app theme
       theme: ThemeData(
-        fontFamily: "Lato",
-        primarySwatch: Colors.blue,
+        fontFamily: "Lora",
         platform: TargetPlatform.iOS,
         appBarTheme: const AppBarTheme(
           centerTitle: true,
@@ -36,7 +36,8 @@ class MyApp extends StatelessWidget {
       ),
       //to determine if the user signed in or not
       //home: isLogin ? const MyPages() : const MyLoginPage(),\
-      home: const SplashScreen(),
+      // home: const SplashScreen(),\
+      home: const WelcomeScreen(),
     );
   }
 }
