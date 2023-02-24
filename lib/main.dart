@@ -1,23 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:grad_project/screens/main_page.dart';
 
 import 'package:grad_project/screens/splash_screen.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import 'constant.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
-  SharedPreferences prefs = await SharedPreferences.getInstance();
-  final isLogin = prefs.getBool('isLogin') ?? false;
-  runApp(MyApp(
-    isLogin: isLogin,
-  ));
+
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key, required this.isLogin});
-  final bool isLogin;
+  final _auth = FirebaseAuth.instance;
   // This widget is the root of the application.
   @override
   Widget build(BuildContext context) {
@@ -33,7 +30,7 @@ class MyApp extends StatelessWidget {
           elevation: 2,
         ),
       ),
-      home: const SplashScreen(),
+      home: _auth.currentUser != null ? const MyPages() : const SplashScreen(),
     );
   }
 }
