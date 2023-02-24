@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:grad_project/components/drawer.dart';
 import 'package:grad_project/constant.dart';
 import 'package:grad_project/components/cleaning_system.dart';
 import 'package:grad_project/components/my_card.dart';
@@ -25,9 +26,9 @@ class SolarPage extends StatelessWidget {
     ];
 
     return Scaffold(
+      drawer: const myDrawer(),
       appBar: AppBar(
         title: const Text('Solar Panel', style: appBarTextStyle),
-        leading: const PopUpMenu(),
       ),
       body: SingleChildScrollView(
         child: Padding(

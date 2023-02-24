@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:grad_project/components/drawer.dart';
 import 'package:grad_project/constant.dart';
 import 'package:grad_project/components/my_card.dart';
 import 'package:grad_project/components/popup_menu.dart';
@@ -22,9 +23,10 @@ class HomePage extends StatelessWidget {
     ];
 
     return Scaffold(
+      drawer: const myDrawer(),
       appBar: AppBar(
         title: const Text('Home', style: appBarTextStyle),
-        leading: const PopUpMenu(),
+        // leading: const PopUpMenu(),
       ),
       body: SingleChildScrollView(
         child: Padding(

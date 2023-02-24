@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:grad_project/components/drawer.dart';
 import 'package:grad_project/constant.dart';
 import 'package:grad_project/components/popup_menu.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
@@ -12,9 +13,9 @@ class BatteryPage extends StatelessWidget {
     var percent = 0.40;
 
     return Scaffold(
+      drawer: const myDrawer(),
       appBar: AppBar(
         title: const Text('Battery', style: appBarTextStyle),
-        leading: const PopUpMenu(),
       ),
       body: SizedBox(
         width: double.maxFinite,

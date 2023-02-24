@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:grad_project/constant.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:grad_project/screens/battery_page.dart';
-import 'package:grad_project/screens/chat_screen.dart';
 import 'package:grad_project/screens/home_page.dart';
 import 'package:grad_project/screens/solar_page.dart';
 
@@ -22,7 +21,6 @@ class _MyPagesState extends State<MyPages> {
     const HomePage(),
     const SolarPage(),
     const BatteryPage(),
-    const ChatScreen()
   ];
 
   //list of navigation bar content
@@ -30,7 +28,6 @@ class _MyPagesState extends State<MyPages> {
     ['Home', Icons.home_rounded],
     ['Solar', Icons.solar_power_rounded],
     ['Battery', Icons.battery_full_rounded],
-    ['Chat', Icons.chat_bubble_rounded]
   ];
 
   @override
@@ -52,8 +49,10 @@ class _MyPagesState extends State<MyPages> {
                 backgroundColor: Colors.white,
                 activeColor: Colors.white,
                 tabBackgroundColor: mainBlue,
-                tabMargin: const EdgeInsets.all(8),
-                padding: const EdgeInsets.all(10),
+                tabMargin:
+                    const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                 selectedIndex: index,
                 onTabChange: (index) {
                   setState(() {

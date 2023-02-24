@@ -34,10 +34,7 @@ class MyApp extends StatelessWidget {
           elevation: 2,
         ),
       ),
-      //to determine if the user signed in or not
-      //home: isLogin ? const MyPages() : const MyLoginPage(),\
-      // home: const SplashScreen(),\
-      home: const WelcomeScreen(),
+      home: const SplashScreen(),
     );
   }
 }
