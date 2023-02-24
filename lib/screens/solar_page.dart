@@ -4,8 +4,6 @@ import 'package:grad_project/constant.dart';
 import 'package:grad_project/components/cleaning_system.dart';
 import 'package:grad_project/components/my_card.dart';
 
-import '../components/popup_menu.dart';
-
 class SolarPage extends StatelessWidget {
   const SolarPage({super.key});
 

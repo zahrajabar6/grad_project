@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:grad_project/components/background.dart';
 import 'package:grad_project/components/button.dart';
@@ -15,10 +16,11 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  // final _auth = FirebaseAuth.instance;
+  final _auth = FirebaseAuth.instance;
   bool showSpinner = false;
   late String email;
   late String password;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -75,24 +77,24 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                   MyButton(
                     text: 'Log In',
-                    onPress: () {
-                      // setState(() {
-                      //   showSpinner = true;
-                      // });
-                      // try {
-                      //   final signUser = await _auth.signInWithEmailAndPassword(
-                      //       email: email, password: password);
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const MyPages()),
-                      );
-                      //   setState(() {
-                      //     showSpinner = false;
-                      //   });
-                      // } catch (e) {
-                      //   print(e);
-                      // }
+                    onPress: () async {
+                      setState(() {
+                        showSpinner = true;
+                      });
+                      try {
+                        final signUser = await _auth.signInWithEmailAndPassword(
+                            email: email, password: password);
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const MyPages()),
+                        );
+                        setState(() {
+                          showSpinner = false;
+                        });
+                      } catch (e) {
+                        print(e);
+                      }
                       print(email);
                       print(password);
                     },

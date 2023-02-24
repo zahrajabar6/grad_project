@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:grad_project/components/drawer.dart';
 import 'package:grad_project/constant.dart';
-import 'package:grad_project/components/popup_menu.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 
 class BatteryPage extends StatelessWidget {
