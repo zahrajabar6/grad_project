@@ -4,7 +4,6 @@ import 'package:grad_project/components/background.dart';
 import 'package:grad_project/components/button.dart';
 import 'package:grad_project/constant.dart';
 import 'package:grad_project/screens/main_page.dart';
-import 'package:lottie/lottie.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -37,13 +36,10 @@ class _LoginScreenState extends State<LoginScreen> {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   Flexible(
-                    child: Hero(
-                      tag: 'logo',
-                      child: SizedBox(
-                        height: 150.0,
-                        child: Lottie.network(
-                            'https://assets10.lottiefiles.com/datafiles/ugFV3T9Zi676bvx/data.json'),
-                      ),
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(
+                          vertical: 20, horizontal: 50),
+                      child: Image.asset('assets/images/logo1.png'),
                     ),
                   ),
                   const SizedBox(

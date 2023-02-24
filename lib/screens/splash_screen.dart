@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:grad_project/constant.dart';
 import 'package:grad_project/screens/login_screen.dart';
-import 'package:lottie/lottie.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -12,7 +12,7 @@ class SplashScreen extends StatefulWidget {
 
 class _SplashScreenState extends State<SplashScreen> {
   startTime() {
-    var duration = const Duration(seconds: 5);
+    var duration = const Duration(seconds: 3);
     return Timer(duration, route);
   }
 
@@ -34,11 +34,31 @@ class _SplashScreenState extends State<SplashScreen> {
     return Scaffold(
       backgroundColor: Colors.white,
       body: Center(
-          child: SizedBox(
-        height: 150,
-        child: Lottie.network(
-            'https://assets10.lottiefiles.com/datafiles/ugFV3T9Zi676bvx/data.json'),
-      )),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 70, vertical: 40),
+              child: Image.asset('assets/images/logo1.png'),
+            ),
+            const SizedBox(
+              height: 40,
+              width: 40,
+              child: CircularProgressIndicator(
+                backgroundColor: mainBlue,
+                color: lightGrey,
+                strokeWidth: 3,
+              ),
+            ),
+          ],
+        ),
+      ),
+      // SizedBox(
+      //   height: 150,
+      //   child: Lottie.network(
+      //       'https://assets10.lottiefiles.com/datafiles/ugFV3T9Zi676bvx/data.json'),
+      // )),
     );
   }
 }

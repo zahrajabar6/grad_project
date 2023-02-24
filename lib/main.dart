@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:grad_project/screens/main_page.dart';
-
 import 'package:grad_project/screens/splash_screen.dart';
 import 'constant.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
+final _auth = FirebaseAuth.instance;
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
 
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  final _auth = FirebaseAuth.instance;
+  const MyApp({super.key});
   // This widget is the root of the application.
   @override
   Widget build(BuildContext context) {
