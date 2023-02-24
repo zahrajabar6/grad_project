@@ -1,12 +1,20 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:grad_project/constant.dart';
 import 'package:grad_project/screens/chat_screen.dart';
 import 'package:grad_project/screens/login_screen.dart';
 
-class MyDrawer extends StatelessWidget {
+class MyDrawer extends StatefulWidget {
   const MyDrawer({
     super.key,
   });
+
+  @override
+  State<MyDrawer> createState() => _MyDrawerState();
+}
+
+class _MyDrawerState extends State<MyDrawer> {
+  final _auth = FirebaseAuth.instance;
 
   @override
   Widget build(BuildContext context) {
@@ -42,6 +50,7 @@ class MyDrawer extends StatelessWidget {
           ListTile(
             title: const Text("Log Out", style: drawerTextTextStyle),
             onTap: () {
+              _auth.signOut();
               Navigator.pop(context);
               Navigator.push(
                 context,
