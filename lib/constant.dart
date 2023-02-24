@@ -13,6 +13,11 @@ const cardTitleTextStyle =
 const cardTextTextStyle =
     TextStyle(fontSize: 18, color: lightGrey, fontWeight: FontWeight.w500);
 
+const drawerTextTextStyle = TextStyle(
+    fontSize: 18,
+    color: Color.fromARGB(255, 91, 91, 91),
+    fontWeight: FontWeight.w400);
+
 const batteryLabelTextStyle =
     TextStyle(color: mainBlue, fontSize: 30, fontWeight: FontWeight.w400);
 

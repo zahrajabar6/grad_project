@@ -23,7 +23,7 @@ class HomePage extends StatelessWidget {
     ];
 
     return Scaffold(
-      drawer: const myDrawer(),
+      drawer: const MyDrawer(),
       appBar: AppBar(
         title: const Text('Home', style: appBarTextStyle),
         // leading: const PopUpMenu(),

@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:grad_project/constant.dart';
 import 'package:grad_project/screens/chat_screen.dart';
 import 'package:grad_project/screens/login_screen.dart';
 
-class myDrawer extends StatelessWidget {
-  const myDrawer({
+class MyDrawer extends StatelessWidget {
+  const MyDrawer({
     super.key,
   });
 
@@ -15,13 +16,21 @@ class myDrawer extends StatelessWidget {
         padding: EdgeInsets.zero,
         children: [
           const DrawerHeader(
-            decoration: BoxDecoration(
-              color: Colors.blue,
-            ),
-            child: Text('Drawer Header'),
-          ),
+              decoration: BoxDecoration(
+                color: mainBlue,
+              ),
+              child: CircleAvatar(
+                backgroundColor: Colors.white,
+                radius: 20,
+                child: Padding(
+                  padding: EdgeInsets.all(15.0),
+                  child: Image(
+                    image: AssetImage("assets/images/logo.png"),
+                  ),
+                ),
+              )),
           ListTile(
-            title: const Text("Technical Support"),
+            title: const Text("Technical Support", style: drawerTextTextStyle),
             onTap: () {
               Navigator.pop(context);
               Navigator.push(
@@ -31,7 +40,7 @@ class myDrawer extends StatelessWidget {
             },
           ),
           ListTile(
-            title: const Text("Log Out"),
+            title: const Text("Log Out", style: drawerTextTextStyle),
             onTap: () {
               Navigator.pop(context);
               Navigator.push(
