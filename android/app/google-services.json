@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1056621318925",
+    "project_id": "solarmonitoring-d389b",
+    "storage_bucket": "solarmonitoring-d389b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1056621318925:android:4b488e00452a4834061644",
+        "android_client_info": {
+          "package_name": "com.aliraqia.grad_project"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1056621318925-ver7vd21cf2ndevgse7589onng78sugr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBWVPDbvgYFh7CaDP5aLtcjLkoTzWu2b9M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1056621318925-ver7vd21cf2ndevgse7589onng78sugr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
