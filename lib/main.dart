@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:grad_project/screens/main_page.dart';
+import 'package:grad_project/screens/admin%20side/admin_pages.dart';
+import 'package:grad_project/screens/client%20side/main_page.dart';
 import 'package:grad_project/screens/splash_screen.dart';
 import 'constant.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -30,7 +31,11 @@ class MyApp extends StatelessWidget {
           elevation: 2,
         ),
       ),
-      home: _auth.currentUser != null ? const MyPages() : const SplashScreen(),
+      home: _auth.currentUser != null
+          ? (_auth.currentUser!.email == 'admin@admin.com'
+              ? const AdminPages()
+              : const MyPages())
+          : const SplashScreen(),
     );
   }
 }

@@ -1,33 +1,27 @@
 import 'package:flutter/material.dart';
 import 'package:grad_project/constant.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
-import 'package:grad_project/screens/battery_page.dart';
-import 'package:grad_project/screens/home_page.dart';
-import 'package:grad_project/screens/solar_page.dart';
+import 'package:grad_project/screens/admin%20side/add_users.dart';
+import 'package:grad_project/screens/admin%20side/chats_page.dart';
 
-class MyPages extends StatefulWidget {
-  const MyPages({super.key});
+class AdminPages extends StatefulWidget {
+  const AdminPages({super.key});
   static String id = 'mainPages';
   @override
-  State<MyPages> createState() => _MyPagesState();
+  State<AdminPages> createState() => _AdminPagesState();
 }
 
-class _MyPagesState extends State<MyPages> {
+class _AdminPagesState extends State<AdminPages> {
   //set the solr page as the first page on lunching
   int index = 1;
 
   //list of pages
-  final screens = [
-    const HomePage(),
-    const SolarPage(),
-    const BatteryPage(),
-  ];
+  final screens = [const AddNewUser(), const AdminChats()];
 
   //list of navigation bar content
   final items = <dynamic>[
-    ['Home', Icons.home_rounded],
-    ['Solar', Icons.solar_power_rounded],
-    ['Battery', Icons.battery_full_rounded],
+    ['Add Users', Icons.person],
+    ['Chats', Icons.chat_bubble_rounded],
   ];
 
   @override

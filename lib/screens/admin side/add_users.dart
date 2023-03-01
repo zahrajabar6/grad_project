@@ -1,27 +1,24 @@
-// ignore_for_file: use_build_context_synchronously
-
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:grad_project/components/background.dart';
 import 'package:grad_project/components/button.dart';
 import 'package:grad_project/constant.dart';
-import 'package:grad_project/screens/admin%20side/add_users.dart';
-import 'package:grad_project/screens/client%20side/main_page.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 
-class LoginScreen extends StatefulWidget {
-  const LoginScreen({super.key});
+class AddNewUser extends StatefulWidget {
+  const AddNewUser({super.key});
   static String id = 'LoginScreen';
 
   @override
-  State<LoginScreen> createState() => _LoginScreenState();
+  State<AddNewUser> createState() => _AddNewUserState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _AddNewUserState extends State<AddNewUser> {
   final _auth = FirebaseAuth.instance;
   bool showSpinner = false;
   late String email;
   late String password;
+  late String channelId;
 
   @override
   Widget build(BuildContext context) {
@@ -72,30 +69,30 @@ class _LoginScreenState extends State<LoginScreen> {
                         hintText: 'Enter your password.'),
                   ),
                   const SizedBox(
+                    height: 8,
+                  ),
+                  TextField(
+                    textAlign: TextAlign.center,
+                    obscureText: true,
+                    onChanged: (value) {
+                      //Do something with the user input.
+                      channelId = value;
+                    },
+                    decoration:
+                        kTextFieldDecoration.copyWith(hintText: 'Channel Id.'),
+                  ),
+                  const SizedBox(
                     height: 24.0,
                   ),
                   MyButton(
-                    text: 'Log In',
+                    text: 'Add user',
                     onPress: () async {
                       setState(() {
                         showSpinner = true;
                       });
                       try {
-                        final signUser = await _auth.signInWithEmailAndPassword(
+                        await _auth.createUserWithEmailAndPassword(
                             email: email, password: password);
-                        if (signUser.user!.email == 'admin@admin.com') {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => const AddNewUser()),
-                          );
-                        } else {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => const MyPages()),
-                          );
-                        }
 
                         setState(() {
                           showSpinner = false;

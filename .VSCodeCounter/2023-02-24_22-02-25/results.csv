@@ -1,0 +1,45 @@
+"filename", "language", "YAML", "JSON", "Dart", "Markdown", "XML", "HTML", "C++", "Swift", "Properties", "Groovy", "comment", "blank", "total"
+"c:\Users\Zahraa\Desktop\graduation project\grad_project\README.md", "Markdown", 0, 0, 0, 10, 0, 0, 0, 0, 0, 0, 0, 7, 17
+"c:\Users\Zahraa\Desktop\graduation project\grad_project\analysis_options.yaml", "YAML", 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 23, 4, 30
+"c:\Users\Zahraa\Desktop\graduation project\grad_project\android\app\build.gradle", "Groovy", 0, 0, 0, 0, 0, 0, 0, 0, 0, 56, 5, 13, 74
+"c:\Users\Zahraa\Desktop\graduation project\grad_project\android\app\google-services.json", "JSON", 0, 39, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 39
+"c:\Users\Zahraa\Desktop\graduation project\grad_project\android\app\src\debug\AndroidManifest.xml", "XML", 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 4, 1, 9
+"c:\Users\Zahraa\Desktop\graduation project\grad_project\android\app\src\main\AndroidManifest.xml", "XML", 0, 0, 0, 0, 28, 0, 0, 0, 0, 0, 6, 1, 35
+"c:\Users\Zahraa\Desktop\graduation project\grad_project\android\app\src\main\res\drawable-v21\launch_background.xml", "XML", 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 7, 2, 13
+"c:\Users\Zahraa\Desktop\graduation project\grad_project\android\app\src\main\res\drawable\launch_background.xml", "XML", 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 7, 2, 13
+"c:\Users\Zahraa\Desktop\graduation project\grad_project\android\app\src\main\res\values-night\styles.xml", "XML", 0, 0, 0, 0, 9, 0, 0, 0, 0, 0, 9, 1, 19
+"c:\Users\Zahraa\Desktop\graduation project\grad_project\android\app\src\main\res\values\styles.xml", "XML", 0, 0, 0, 0, 9, 0, 0, 0, 0, 0, 9, 1, 19
+"c:\Users\Zahraa\Desktop\graduation project\grad_project\android\app\src\profile\AndroidManifest.xml", "XML", 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 4, 1, 9
+"c:\Users\Zahraa\Desktop\graduation project\grad_project\android\build.gradle", "Groovy", 0, 0, 0, 0, 0, 0, 0, 0, 0, 28, 0, 5, 33
+"c:\Users\Zahraa\Desktop\graduation project\grad_project\android\gradle.properties", "Properties", 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 1, 4
+"c:\Users\Zahraa\Desktop\graduation project\grad_project\android\gradle\wrapper\gradle-wrapper.properties", "Properties", 0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 1, 1, 7
+"c:\Users\Zahraa\Desktop\graduation project\grad_project\android\settings.gradle", "Groovy", 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 0, 4, 12
+"c:\Users\Zahraa\Desktop\graduation project\grad_project\ios\Runner\AppDelegate.swift", "Swift", 0, 0, 0, 0, 0, 0, 0, 12, 0, 0, 0, 2, 14
+"c:\Users\Zahraa\Desktop\graduation project\grad_project\ios\Runner\Assets.xcassets\AppIcon.appiconset\Contents.json", "JSON", 0, 122, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 123
+"c:\Users\Zahraa\Desktop\graduation project\grad_project\ios\Runner\Assets.xcassets\LaunchImage.imageset\Contents.json", "JSON", 0, 23, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 24
+"c:\Users\Zahraa\Desktop\graduation project\grad_project\ios\Runner\Assets.xcassets\LaunchImage.imageset\README.md", "Markdown", 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 2, 5
+"c:\Users\Zahraa\Desktop\graduation project\grad_project\ios\Runner\Base.lproj\LaunchScreen.storyboard", "XML", 0, 0, 0, 0, 36, 0, 0, 0, 0, 0, 1, 1, 38
+"c:\Users\Zahraa\Desktop\graduation project\grad_project\ios\Runner\Base.lproj\Main.storyboard", "XML", 0, 0, 0, 0, 25, 0, 0, 0, 0, 0, 1, 1, 27
+"c:\Users\Zahraa\Desktop\graduation project\grad_project\ios\Runner\Runner-Bridging-Header.h", "C++", 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 2
+"c:\Users\Zahraa\Desktop\graduation project\grad_project\lib\components\background.dart", "Dart", 0, 0, 15, 0, 0, 0, 0, 0, 0, 0, 1, 4, 20
+"c:\Users\Zahraa\Desktop\graduation project\grad_project\lib\components\button.dart", "Dart", 0, 0, 31, 0, 0, 0, 0, 0, 0, 0, 31, 5, 67
+"c:\Users\Zahraa\Desktop\graduation project\grad_project\lib\components\cleaning_system.dart", "Dart", 0, 0, 44, 0, 0, 0, 0, 0, 0, 0, 0, 5, 49
+"c:\Users\Zahraa\Desktop\graduation project\grad_project\lib\components\drawer.dart", "Dart", 0, 0, 60, 0, 0, 0, 0, 0, 0, 0, 1, 5, 66
+"c:\Users\Zahraa\Desktop\graduation project\grad_project\lib\components\message_bubble.dart", "Dart", 0, 0, 54, 0, 0, 0, 0, 0, 0, 0, 0, 2, 56
+"c:\Users\Zahraa\Desktop\graduation project\grad_project\lib\components\my_card.dart", "Dart", 0, 0, 63, 0, 0, 0, 0, 0, 0, 0, 0, 4, 67
+"c:\Users\Zahraa\Desktop\graduation project\grad_project\lib\components\text_form.dart", "Dart", 0, 0, 59, 0, 0, 0, 0, 0, 0, 0, 0, 4, 63
+"c:\Users\Zahraa\Desktop\graduation project\grad_project\lib\constant.dart", "Dart", 0, 0, 62, 0, 0, 0, 0, 0, 0, 0, 1, 17, 80
+"c:\Users\Zahraa\Desktop\graduation project\grad_project\lib\local database\local_db.dart", "Dart", 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 1, 5
+"c:\Users\Zahraa\Desktop\graduation project\grad_project\lib\main.dart", "Dart", 0, 0, 31, 0, 0, 0, 0, 0, 0, 0, 2, 4, 37
+"c:\Users\Zahraa\Desktop\graduation project\grad_project\lib\screens\battery_page.dart", "Dart", 0, 0, 43, 0, 0, 0, 0, 0, 0, 0, 1, 4, 48
+"c:\Users\Zahraa\Desktop\graduation project\grad_project\lib\screens\chat_screen.dart", "Dart", 0, 0, 123, 0, 0, 0, 0, 0, 0, 0, 2, 13, 138
+"c:\Users\Zahraa\Desktop\graduation project\grad_project\lib\screens\home_page.dart", "Dart", 0, 0, 51, 0, 0, 0, 0, 0, 0, 0, 4, 5, 60
+"c:\Users\Zahraa\Desktop\graduation project\grad_project\lib\screens\login_screen.dart", "Dart", 0, 0, 98, 0, 0, 0, 0, 0, 0, 0, 2, 5, 105
+"c:\Users\Zahraa\Desktop\graduation project\grad_project\lib\screens\main_page.dart", "Dart", 0, 0, 64, 0, 0, 0, 0, 0, 0, 0, 5, 7, 76
+"c:\Users\Zahraa\Desktop\graduation project\grad_project\lib\screens\solar_page.dart", "Dart", 0, 0, 54, 0, 0, 0, 0, 0, 0, 0, 3, 5, 62
+"c:\Users\Zahraa\Desktop\graduation project\grad_project\lib\screens\splash_screen.dart", "Dart", 0, 0, 54, 0, 0, 0, 0, 0, 0, 0, 5, 6, 65
+"c:\Users\Zahraa\Desktop\graduation project\grad_project\lib\services\validation.dart", "Dart", 0, 0, 13, 0, 0, 0, 0, 0, 0, 0, 0, 3, 16
+"c:\Users\Zahraa\Desktop\graduation project\grad_project\pubspec.yaml", "YAML", 28, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 14, 58
+"c:\Users\Zahraa\Desktop\graduation project\grad_project\web\index.html", "HTML", 0, 0, 0, 0, 0, 37, 0, 0, 0, 0, 16, 6, 59
+"c:\Users\Zahraa\Desktop\graduation project\grad_project\web\manifest.json", "JSON", 0, 35, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 36
+"Total", "-", 31, 219, 923, 13, 123, 37, 1, 12, 8, 92, 167, 173, 1799

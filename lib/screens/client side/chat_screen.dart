@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:grad_project/components/message_bubble.dart';
-import '../constant.dart';
+import '../../constant.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 final _firestore = FirebaseFirestore.instance;
@@ -34,7 +34,7 @@ class _ChatScreenState extends State<ChatScreen> {
         signedInUser = user;
       }
     } catch (e) {
-      print(e);
+      //print(e);
     }
   }
 

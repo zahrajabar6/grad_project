@@ -1,19 +1,16 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:grad_project/constant.dart';
-import 'package:grad_project/screens/client%20side/chat_screen.dart';
 import 'package:grad_project/screens/login_screen.dart';
 
-class MyDrawer extends StatefulWidget {
-  const MyDrawer({
-    super.key,
-  });
+class AdminDrawer extends StatefulWidget {
+  const AdminDrawer({super.key});
 
   @override
-  State<MyDrawer> createState() => _MyDrawerState();
+  State<AdminDrawer> createState() => _AdminDrawerState();
 }
 
-class _MyDrawerState extends State<MyDrawer> {
+class _AdminDrawerState extends State<AdminDrawer> {
   final _auth = FirebaseAuth.instance;
 
   @override
@@ -28,30 +25,13 @@ class _MyDrawerState extends State<MyDrawer> {
             backgroundColor: mainBlue,
             radius: 20,
             child: Padding(
-              padding: EdgeInsets.all(15.0),
-              child: Icon(
-                Icons.person,
-                size: 70,
-                color: Colors.white70,
-              ),
-            ),
+                padding: EdgeInsets.all(15.0),
+                child: Icon(
+                  Icons.person,
+                  size: 70,
+                  color: Colors.white70,
+                )),
           )),
-          ListTile(
-            leading: const Icon(Icons.chat_bubble_rounded),
-            title: const Text("Technical Support", style: drawerTextTextStyle),
-            onTap: () {
-              Navigator.pop(context);
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const ChatScreen()),
-              );
-            },
-          ),
-          ListTile(
-            leading: const Icon(Icons.help),
-            title: const Text("Help", style: drawerTextTextStyle),
-            onTap: () {},
-          ),
           ListTile(
             leading: const Icon(Icons.logout),
             title: const Text("Log Out", style: drawerTextTextStyle),
