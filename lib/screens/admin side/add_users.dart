@@ -36,7 +36,7 @@ class _AddNewUserState extends State<AddNewUser> {
             child: ListView(
               children: [
                 Padding(
-                  padding: const EdgeInsets.only(top: 40),
+                  padding: const EdgeInsets.only(top: 80),
                   child: SizedBox(
                     height: 60,
                     child: Image.asset(
