@@ -13,7 +13,7 @@ class AdminPages extends StatefulWidget {
 
 class _AdminPagesState extends State<AdminPages> {
   //set the solr page as the first page on lunching
-  int index = 1;
+  int index = 0;
 
   //list of pages
   final screens = [const AddNewUser(), const AdminChats()];

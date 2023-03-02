@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:grad_project/components/background.dart';
 import 'package:grad_project/components/button.dart';
 import 'package:grad_project/constant.dart';
-import 'package:grad_project/screens/admin%20side/add_users.dart';
+import 'package:grad_project/screens/admin%20side/admin_pages.dart';
 import 'package:grad_project/screens/client%20side/main_page.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 
@@ -87,7 +87,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => const AddNewUser()),
+                                builder: (context) => const AdminPages()),
                           );
                         } else {
                           Navigator.push(
