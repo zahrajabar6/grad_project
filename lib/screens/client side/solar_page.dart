@@ -43,6 +43,7 @@ class SolarPage extends StatelessWidget {
                 //Get the children from the item list
                 children: items
                     .map((e) => RoomsCard(
+                          isPressable: false,
                           width: width,
                           height: height * 0.20,
                           text1: e[0],

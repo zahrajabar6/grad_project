@@ -42,6 +42,7 @@ class HomePage extends StatelessWidget {
                 //Get the children from the item list
                 children: items
                     .map((e) => RoomsCard(
+                          isPressable: true,
                           width: width,
                           height: height * 0.20,
                           text1: e[0],

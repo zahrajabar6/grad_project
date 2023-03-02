@@ -34,7 +34,7 @@ class _UserChatScreenState extends State<UserChatScreen> {
         signedInUser = user;
       }
     } catch (e) {
-      print(e);
+      //print(e);
     }
   }
 

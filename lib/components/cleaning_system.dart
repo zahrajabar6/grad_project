@@ -16,7 +16,7 @@ class CleaningSysCard extends StatefulWidget {
 }
 
 class _CleaningSysCardState extends State<CleaningSysCard> {
-  bool value = true;
+  bool value = false;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
