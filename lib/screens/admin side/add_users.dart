@@ -1,6 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:grad_project/components/admin_drawer.dart';
+import 'package:grad_project/screens/admin%20side/admin_drawer.dart';
 import 'package:grad_project/components/button.dart';
 import 'package:grad_project/constant.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';

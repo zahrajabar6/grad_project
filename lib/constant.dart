@@ -30,6 +30,9 @@ const batteryPercentTextStyle =
 const pageLabelTextStyle =
     TextStyle(color: mainBlue, fontSize: 24, fontWeight: FontWeight.w400);
 
+const pageTextTextStyle =
+    TextStyle(color: lightGrey, fontSize: 16, fontWeight: FontWeight.normal);
+
 const loginLableTextStyle = TextStyle(
     fontSize: 30,
     fontWeight: FontWeight.bold,

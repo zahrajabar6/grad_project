@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:grad_project/constant.dart';
+import 'package:grad_project/screens/client%20side/about_us.dart';
 import 'package:grad_project/screens/client%20side/chat_screen.dart';
 import 'package:grad_project/screens/login_screen.dart';
 
@@ -37,7 +38,9 @@ class _MyDrawerState extends State<MyDrawer> {
             ),
           )),
           ListTile(
-            leading: const Icon(Icons.chat_bubble_rounded),
+            leading: const Icon(
+              Icons.chat_bubble_rounded,
+            ),
             title: const Text("Technical Support", style: drawerTextTextStyle),
             onTap: () {
               Navigator.pop(context);
@@ -49,8 +52,14 @@ class _MyDrawerState extends State<MyDrawer> {
           ),
           ListTile(
             leading: const Icon(Icons.help),
-            title: const Text("Help", style: drawerTextTextStyle),
-            onTap: () {},
+            title: const Text("About Us", style: drawerTextTextStyle),
+            onTap: () {
+              Navigator.pop(context);
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const AboutUs()),
+              );
+            },
           ),
           ListTile(
             leading: const Icon(Icons.logout),
