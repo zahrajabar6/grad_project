@@ -6,36 +6,33 @@ class AboutUs extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        appBar: AppBar(
-          title: const Text('About Us', style: appBarTextStyle),
-        ),
-        body: SingleChildScrollView(
-          child: Padding(
-            padding: const EdgeInsets.all(20),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: const [
-                InfoCard(
-                  title: 'No More Load Shedding!',
-                  text:
-                      'Tired of Load Shedding? Our Solar System is the Answer',
-                  imageURL: 'assets/images/icon1.png',
-                ),
-                InfoCard(
-                  title: 'Reduced Expenses!',
-                  text: 'No More Expenses on Diesel Generators & UPS',
-                  imageURL: 'assets/images/icon2.png',
-                ),
-                InfoCard(
-                  title: 'Reduced Electricity Bills!',
-                  text:
-                      'Visible Reduction in your Electricity Bills with our On-Grid Solar Solutions',
-                  imageURL: 'assets/images/icon3.png',
-                ),
-              ],
-            ),
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('About Us', style: appBarTextStyle),
+      ),
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(20),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: const [
+              InfoCard(
+                title: 'No More Load Shedding!',
+                text: 'Tired of Load Shedding? Our Solar System is the Answer',
+                imageURL: 'assets/images/icon1.png',
+              ),
+              InfoCard(
+                title: 'Reduced Expenses!',
+                text: 'No More Expenses on Diesel Generators & UPS',
+                imageURL: 'assets/images/icon2.png',
+              ),
+              InfoCard(
+                title: 'Reduced Electricity Bills!',
+                text:
+                    'Visible Reduction in your Electricity Bills with our On-Grid Solar Solutions',
+                imageURL: 'assets/images/icon3.png',
+              ),
+            ],
           ),
         ),
       ),
