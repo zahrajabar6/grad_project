@@ -1,13 +1,16 @@
+// ignore_for_file: use_build_context_synchronously
+
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:grad_project/screens/admin%20side/admin_drawer.dart';
 import 'package:grad_project/components/button.dart';
 import 'package:grad_project/constant.dart';
+import 'package:grad_project/screens/admin%20side/useradded.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 
 class AddNewUser extends StatefulWidget {
   const AddNewUser({super.key});
-  static String id = 'LoginScreen';
 
   @override
   State<AddNewUser> createState() => _AddNewUserState();
@@ -15,6 +18,8 @@ class AddNewUser extends StatefulWidget {
 
 class _AddNewUserState extends State<AddNewUser> {
   final _auth = FirebaseAuth.instance;
+  final _firestore = FirebaseFirestore.instance;
+
   bool showSpinner = false;
   late String email;
   late String userName;
@@ -89,7 +94,7 @@ class _AddNewUserState extends State<AddNewUser> {
                 ),
                 TextField(
                   textAlign: TextAlign.center,
-                  obscureText: true,
+                  obscureText: false,
                   onChanged: (value) {
                     //Do something with the user input.
                     channelId = value;
@@ -109,13 +114,25 @@ class _AddNewUserState extends State<AddNewUser> {
                     try {
                       await _auth.createUserWithEmailAndPassword(
                           email: email, password: password);
+                      final User? currentuser = _auth.currentUser;
 
-                      setState(() {
-                        showSpinner = false;
+                      _firestore.collection('users').add({
+                        'name': userName,
+                        'email': email,
+                        'channelID': channelId,
+                        'uid': currentuser!.uid
                       });
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const AddedDone()),
+                      );
                     } catch (e) {
                       //print(e);
                     }
+                    setState(() {
+                      showSpinner = false;
+                    });
                   },
                 ),
               ],

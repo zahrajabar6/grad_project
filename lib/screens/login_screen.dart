@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:grad_project/components/background.dart';
 import 'package:grad_project/components/button.dart';
 import 'package:grad_project/constant.dart';
+import 'package:grad_project/localdb.dart';
 import 'package:grad_project/screens/admin%20side/admin_pages.dart';
 import 'package:grad_project/screens/client%20side/main_page.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
@@ -80,28 +81,38 @@ class _LoginScreenState extends State<LoginScreen> {
                       setState(() {
                         showSpinner = true;
                       });
-                      try {
-                        final signUser = await _auth.signInWithEmailAndPassword(
-                            email: email, password: password);
-                        if (signUser.user!.email == 'admin@admin.com') {
+                      if (email == Admin.email) {
+                        if (password == Admin.password) {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
                                 builder: (context) => const AdminPages()),
                           );
                         } else {
+                          setState(() {
+                            showSpinner = false;
+                          });
+                          ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                        }
+                      } else {
+                        try {
+                          await _auth.signInWithEmailAndPassword(
+                              email: email, password: password);
+
                           Navigator.push(
                             context,
                             MaterialPageRoute(
                                 builder: (context) => const MyPages()),
                           );
+                        } catch (e) {
+                          setState(() {
+                            showSpinner = false;
+                          });
+                          ScaffoldMessenger.of(context).showSnackBar(snackBar);
                         }
-
                         setState(() {
                           showSpinner = false;
                         });
-                      } catch (e) {
-                        //print(e);
                       }
                     },
                   ),

@@ -80,3 +80,11 @@ const kSendButtonTextStyle = TextStyle(
   fontWeight: FontWeight.bold,
   fontSize: 18.0,
 );
+
+const snackBar = SnackBar(
+  content: Text(
+    'Wrong Email or Password',
+    style: TextStyle(fontWeight: FontWeight.w400, fontSize: 18),
+  ),
+  backgroundColor: Color.fromARGB(255, 189, 54, 54),
+);
