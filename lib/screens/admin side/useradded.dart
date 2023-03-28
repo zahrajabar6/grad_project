@@ -16,15 +16,37 @@ class _AddedDoneState extends State<AddedDone> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: MyButton(
-            text: 'Add Another',
-            onPress: () {
-              _auth.signOut();
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const AddNewUser()),
-              );
-            }),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Container(
+                width: 300,
+                height: 300,
+                decoration: const BoxDecoration(
+                  image: DecorationImage(
+                      image: AssetImage("assets/images/added.png"),
+                      fit: BoxFit.fitWidth,
+                      alignment: Alignment.bottomCenter),
+                ),
+              ),
+              const SizedBox(
+                height: 50,
+              ),
+              MyButton(
+                  text: 'Add Another',
+                  onPress: () {
+                    _auth.signOut();
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const AddNewUser()),
+                    );
+                  }),
+            ],
+          ),
+        ),
       ),
     );
   }
