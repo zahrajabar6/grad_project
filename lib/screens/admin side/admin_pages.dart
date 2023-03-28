@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:grad_project/constant.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:grad_project/screens/admin%20side/add_users.dart';
-import 'package:grad_project/screens/admin%20side/chats_page.dart';
+import 'package:grad_project/screens/admin%20side/users.dart';
 
 class AdminPages extends StatefulWidget {
   const AdminPages({super.key});
@@ -16,7 +16,11 @@ class _AdminPagesState extends State<AdminPages> {
   int index = 0;
 
   //list of pages
-  final screens = [const AddNewUser(), const AdminChats()];
+  final screens = [
+    const AddNewUser(),
+    //const AdminChats(),
+    const Users(),
+  ];
 
   //list of navigation bar content
   final items = <dynamic>[
