@@ -3,8 +3,10 @@ import 'package:grad_project/constant.dart';
 import 'package:grad_project/screens/admin%20side/user_chat_screen.dart';
 
 class ChatListItem extends StatelessWidget {
-  const ChatListItem({super.key, required this.userName});
+  const ChatListItem(
+      {super.key, required this.userName, required this.userEmail});
   final String userName;
+  final String userEmail;
   @override
   Widget build(BuildContext context) {
     return MaterialButton(
@@ -14,6 +16,7 @@ class ChatListItem extends StatelessWidget {
           MaterialPageRoute(
               builder: (context) => UserChatScreen(
                     userName: userName,
+                    userEmail: userEmail,
                   )),
         );
       },

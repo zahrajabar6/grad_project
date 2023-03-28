@@ -55,17 +55,17 @@ class UsersStream extends StatelessWidget {
         List<Widget> userWidgets = [];
         for (var user in users) {
           final userName = user.get('name');
-          //final currentUser = user.get('email');
+          final userEmail = user.get('email');
 
           final userWidget = ChatListItem(
             userName: userName,
+            userEmail: userEmail,
           );
 
           userWidgets.add(userWidget);
         }
         return Expanded(
           child: ListView(
-            //padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 20),
             children: userWidgets,
           ),
         );
