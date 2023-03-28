@@ -1,4 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:grad_project/constant.dart';
 import 'package:grad_project/screens/client%20side/about_us.dart';
@@ -31,7 +32,7 @@ class _MyDrawerState extends State<MyDrawer> {
             child: Padding(
               padding: EdgeInsets.all(15.0),
               child: Icon(
-                Icons.person,
+                CupertinoIcons.person_fill,
                 size: 70,
                 color: Colors.white70,
               ),
@@ -39,7 +40,7 @@ class _MyDrawerState extends State<MyDrawer> {
           )),
           ListTile(
             leading: const Icon(
-              Icons.chat_bubble_rounded,
+              CupertinoIcons.chat_bubble_2_fill,
             ),
             title: const Text("Technical Support", style: drawerTextTextStyle),
             onTap: () {
@@ -51,7 +52,7 @@ class _MyDrawerState extends State<MyDrawer> {
             },
           ),
           ListTile(
-            leading: const Icon(Icons.help),
+            leading: const Icon(CupertinoIcons.question_circle),
             title: const Text("About Us", style: drawerTextTextStyle),
             onTap: () {
               Navigator.pop(context);
@@ -62,7 +63,7 @@ class _MyDrawerState extends State<MyDrawer> {
             },
           ),
           ListTile(
-            leading: const Icon(Icons.logout),
+            leading: const Icon(CupertinoIcons.escape),
             title: const Text("Log Out", style: drawerTextTextStyle),
             onTap: () {
               _auth.signOut();

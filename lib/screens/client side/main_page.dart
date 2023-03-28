@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:grad_project/constant.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
@@ -25,9 +26,9 @@ class _MyPagesState extends State<MyPages> {
 
   //list of navigation bar content
   final items = <dynamic>[
-    ['Home', Icons.home_rounded],
+    ['Home', CupertinoIcons.house_fill],
     ['Solar', Icons.solar_power_rounded],
-    ['Battery', Icons.battery_full_rounded],
+    ['Battery', CupertinoIcons.battery_100],
   ];
 
   @override

@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:grad_project/constant.dart';
 import 'package:grad_project/screens/admin%20side/user_chat_screen.dart';
@@ -29,7 +30,7 @@ class ChatListItem extends StatelessWidget {
             leading: const CircleAvatar(
               backgroundColor: mainBlue,
               child: Icon(
-                Icons.person,
+                CupertinoIcons.person_fill,
                 color: Colors.white70,
               ),
             ),

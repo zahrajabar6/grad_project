@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:grad_project/constant.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
@@ -24,8 +25,8 @@ class _AdminPagesState extends State<AdminPages> {
 
   //list of navigation bar content
   final items = <dynamic>[
-    ['Add Users', Icons.person],
-    ['Chats', Icons.chat_bubble_rounded],
+    ['Add Users', CupertinoIcons.person_fill],
+    ['Chats', CupertinoIcons.chat_bubble_2_fill],
   ];
 
   @override
@@ -58,6 +59,7 @@ class _AdminPagesState extends State<AdminPages> {
               },
               tabs: items
                   .map((e) => GButton(
+                        iconSize: 25,
                         icon: e[1],
                         text: e[0].toString(),
                       ))

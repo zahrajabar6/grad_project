@@ -1,4 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:grad_project/constant.dart';
 import 'package:grad_project/screens/login_screen.dart';
@@ -27,13 +28,13 @@ class _AdminDrawerState extends State<AdminDrawer> {
             child: Padding(
                 padding: EdgeInsets.all(15.0),
                 child: Icon(
-                  Icons.person,
+                  CupertinoIcons.person_fill,
                   size: 70,
                   color: Colors.white70,
                 )),
           )),
           ListTile(
-            leading: const Icon(Icons.logout),
+            leading: const Icon(CupertinoIcons.escape),
             title: const Text("Log Out", style: drawerTextTextStyle),
             onTap: () {
               _auth.signOut();
