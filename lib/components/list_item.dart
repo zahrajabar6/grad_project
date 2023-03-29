@@ -48,61 +48,6 @@ class ChatListItem extends StatelessWidget {
   }
 }
 
-// class RoomListItem extends StatefulWidget {
-//   const RoomListItem(
-//       {super.key,
-//       required this.icon,
-//       required this.deviceName,
-//       required this.onChange});
-
-//   final IconData icon;
-//   final String deviceName;
-//   final void Function(bool)? onChange;
-
-//   @override
-//   State<RoomListItem> createState() => _RoomListItemState();
-// }
-
-// class _RoomListItemState extends State<RoomListItem> {
-//   bool value = false;
-//   @override
-//   Widget build(BuildContext context) {
-//     bool isEnabled = true;
-//     return Card(
-//       color: Colors.white,
-//       elevation: 1.5,
-//       child: Padding(
-//         padding: const EdgeInsets.all(8),
-//         child: ListTile(
-//           leading: CircleAvatar(
-//             backgroundColor: mainBlue,
-//             child: Icon(
-//               widget.icon,
-//               color: Colors.white70,
-//             ),
-//           ),
-//           title: Text(
-//             widget.deviceName,
-//             style: TextStyle(
-//                 fontWeight: FontWeight.normal,
-//                 color: Colors.grey.shade700,
-//                 fontSize: 18),
-//           ),
-//           trailing: Switch.adaptive(
-//             activeColor: mainBlue,
-//             value: isEnabled,
-//             // onChanged: (value) {
-//             //   setState(() {
-//             //     isEnabled = value;
-//             //   });
-//             // }
-//             onChanged: widget.onChange,
-//           ),
-//         ),
-//       ),
-//     );
-//   }
-// }
 
 class RoomListItem extends StatefulWidget {
   const RoomListItem({super.key, required this.icon, required this.deviceName});

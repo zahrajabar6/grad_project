@@ -9,7 +9,6 @@ late User signedInUser;
 
 class ChatScreen extends StatefulWidget {
   const ChatScreen({super.key});
-  static String id = 'ChatScreen';
 
   @override
   State<ChatScreen> createState() => _ChatScreenState();
@@ -71,9 +70,10 @@ class _ChatScreenState extends State<ChatScreen> {
                     onPressed: () {
                       //Implement send functionality.
                       messageTextController.clear();
-                      _firestore.collection('messages').add({
+                      _firestore.collection(signedInUser.email!).add({
                         'text': messageText,
                         'sender': signedInUser.email,
+                        'receiver': 'admin@admin.com',
                         'time': FieldValue.serverTimestamp()
                       });
                     },
@@ -98,7 +98,10 @@ class MessagesStream extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<QuerySnapshot>(
-      stream: _firestore.collection('messages').orderBy('time').snapshots(),
+      stream: _firestore
+          .collection(signedInUser.email!)
+          .orderBy('time')
+          .snapshots(),
       builder: (context, snapshot) {
         if (!snapshot.hasData) {
           return const SizedBox(

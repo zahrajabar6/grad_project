@@ -16,8 +16,6 @@ class UserChatScreen extends StatefulWidget {
 
 class _UserChatScreenState extends State<UserChatScreen> {
   final messageTextController = TextEditingController();
-  //final _auth = FirebaseAuth.instance;
-
   String? messageText;
 
   @override
@@ -33,7 +31,9 @@ class _UserChatScreenState extends State<UserChatScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
-            //const MessagesStream(),
+            MessagesStream(
+              userEmail: widget.userEmail,
+            ),
             Container(
               decoration: kMessageContainerDecoration,
               child: Row(
@@ -53,7 +53,7 @@ class _UserChatScreenState extends State<UserChatScreen> {
                     onPressed: () {
                       //Implement send functionality.
                       messageTextController.clear();
-                      _firestore.collection('messagesCollection').add({
+                      _firestore.collection(widget.userEmail).add({
                         'text': messageText,
                         'sender': 'admin@admin.com',
                         'reciver': widget.userEmail,
@@ -75,46 +75,45 @@ class _UserChatScreenState extends State<UserChatScreen> {
   }
 }
 
-// class MessagesStream extends StatelessWidget {
-//   const MessagesStream({super.key});
+class MessagesStream extends StatelessWidget {
+  const MessagesStream({super.key, required this.userEmail});
+  final String userEmail;
+  @override
+  Widget build(BuildContext context) {
+    return StreamBuilder<QuerySnapshot>(
+      stream: _firestore.collection(userEmail).orderBy('time').snapshots(),
+      builder: (context, snapshot) {
+        if (!snapshot.hasData) {
+          return const SizedBox(
+            height: 50,
+            width: 50,
+            child: CircularProgressIndicator(
+              backgroundColor: Colors.blueAccent,
+            ),
+          );
+        }
+        final messages = snapshot.data!.docs.reversed;
+        List<Widget> messagesWidgets = [];
+        for (var message in messages) {
+          final messageText = message.get('text');
+          final messageSender = message.get('sender');
 
-//   @override
-//   Widget build(BuildContext context) {
-//     return StreamBuilder<QuerySnapshot>(
-//       stream: _firestore.collection('messages').orderBy('time').snapshots(),
-//       builder: (context, snapshot) {
-//         if (!snapshot.hasData) {
-//           return const SizedBox(
-//             height: 50,
-//             width: 50,
-//             child: CircularProgressIndicator(
-//               backgroundColor: Colors.blueAccent,
-//             ),
-//           );
-//         }
-//         final messages = snapshot.data!.docs.reversed;
-//         List<Widget> messagesWidgets = [];
-//         for (var message in messages) {
-//           final messageText = message.get('text');
-//           final messageSender = message.get('sender');
-//           const reciverUser = message.get('sender');;
+          final messageWidget = MessageBubble(
+            isMe: messageSender == 'admin@admin.com',
+            sender: messageSender,
+            text: messageText,
+          );
 
-//           final messageWidget = MessageBubble(
-//             isMe: currentUser == messageSender,
-//             sender: messageSender,
-//             text: messageText,
-//           );
-
-//           messagesWidgets.add(messageWidget);
-//         }
-//         return Expanded(
-//           child: ListView(
-//             reverse: true,
-//             padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 20),
-//             children: messagesWidgets,
-//           ),
-//         );
-//       },
-//     );
-//   }
-// }
+          messagesWidgets.add(messageWidget);
+        }
+        return Expanded(
+          child: ListView(
+            reverse: true,
+            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 20),
+            children: messagesWidgets,
+          ),
+        );
+      },
+    );
+  }
+}
