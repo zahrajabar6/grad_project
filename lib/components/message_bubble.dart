@@ -4,25 +4,20 @@ import 'package:grad_project/constant.dart';
 class MessageBubble extends StatelessWidget {
   const MessageBubble({
     super.key,
-    required this.sender,
     required this.text,
     required this.isMe,
   });
-  final String sender;
+  // final String sender;
   final dynamic text;
   final bool isMe;
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(10.0),
+      padding: const EdgeInsets.symmetric(vertical: 4, horizontal: 8),
       child: Column(
         crossAxisAlignment:
             isMe ? CrossAxisAlignment.end : CrossAxisAlignment.start,
         children: [
-          Text(
-            sender,
-            style: const TextStyle(fontSize: 12, color: Colors.black54),
-          ),
           Material(
             elevation: 1,
             borderRadius: isMe

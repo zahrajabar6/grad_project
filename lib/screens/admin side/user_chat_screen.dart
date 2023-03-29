@@ -84,11 +84,13 @@ class MessagesStream extends StatelessWidget {
       stream: _firestore.collection(userEmail).orderBy('time').snapshots(),
       builder: (context, snapshot) {
         if (!snapshot.hasData) {
-          return const SizedBox(
-            height: 50,
-            width: 50,
-            child: CircularProgressIndicator(
-              backgroundColor: Colors.blueAccent,
+          return const Center(
+            child: SizedBox(
+              height: 30,
+              width: 30,
+              child: CircularProgressIndicator(
+                backgroundColor: Colors.blueAccent,
+              ),
             ),
           );
         }
@@ -100,7 +102,6 @@ class MessagesStream extends StatelessWidget {
 
           final messageWidget = MessageBubble(
             isMe: messageSender == 'admin@admin.com',
-            sender: messageSender,
             text: messageText,
           );
 

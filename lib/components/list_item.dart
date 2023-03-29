@@ -25,13 +25,14 @@ class ChatListItem extends StatelessWidget {
         color: Colors.white,
         elevation: 1.5,
         child: Padding(
-          padding: const EdgeInsets.all(8),
+          padding: const EdgeInsets.symmetric(vertical: 8),
           child: ListTile(
-            leading: const CircleAvatar(
-              backgroundColor: mainBlue,
-              child: Icon(
+            horizontalTitleGap: 10,
+            leading: CircleAvatar(
+              backgroundColor: Colors.grey.shade100,
+              child: const Icon(
                 CupertinoIcons.person_fill,
-                color: Colors.white70,
+                color: mainBlue,
               ),
             ),
             title: Text(
@@ -47,7 +48,6 @@ class ChatListItem extends StatelessWidget {
     );
   }
 }
-
 
 class RoomListItem extends StatefulWidget {
   const RoomListItem({super.key, required this.icon, required this.deviceName});

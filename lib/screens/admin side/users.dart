@@ -56,7 +56,6 @@ class UsersStream extends StatelessWidget {
         for (var user in users) {
           final userName = user.get('name');
           final userEmail = user.get('email');
-
           final userWidget = ChatListItem(
             userName: userName,
             userEmail: userEmail,
