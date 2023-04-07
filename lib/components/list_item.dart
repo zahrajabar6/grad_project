@@ -49,6 +49,63 @@ class ChatListItem extends StatelessWidget {
   }
 }
 
+// class RoomListItem extends StatefulWidget {
+//   const RoomListItem({super.key, required this.icon, required this.deviceName});
+//   final IconData icon;
+//   final String deviceName;
+
+//   @override
+//   State<RoomListItem> createState() => _RoomListItemState();
+// }
+
+// class _RoomListItemState extends State<RoomListItem> {
+//   bool value = false;
+//   @override
+//   Widget build(BuildContext context) {
+//     return SizedBox(
+//       child: Card(
+//         color: Colors.white,
+//         elevation: 1.5,
+//         child: Padding(
+//           padding: const EdgeInsets.all(15),
+//           child: Row(
+//             mainAxisAlignment: MainAxisAlignment.spaceBetween,
+//             children: [
+//               CircleAvatar(
+//                 backgroundColor: mainBlue,
+//                 child: Icon(
+//                   widget.icon,
+//                   color: Colors.white70,
+//                 ),
+//               ),
+//               const SizedBox(
+//                 width: 15,
+//               ),
+//               Expanded(
+//                 child: Text(
+//                   widget.deviceName,
+//                   style: TextStyle(
+//                       fontWeight: FontWeight.normal,
+//                       color: Colors.grey.shade700,
+//                       fontSize: 18),
+//                 ),
+//               ),
+//               Switch.adaptive(
+//                   activeColor: mainBlue,
+//                   value: value,
+//                   onChanged: (value) {
+//                     setState(() {
+//                       this.value = value;
+//                     });
+//                   })
+//             ],
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+// }
+
 class RoomListItem extends StatefulWidget {
   const RoomListItem({super.key, required this.icon, required this.deviceName});
   final IconData icon;
@@ -62,45 +119,62 @@ class _RoomListItemState extends State<RoomListItem> {
   bool value = false;
   @override
   Widget build(BuildContext context) {
+    // getting the size of the window
+    var size = MediaQuery.of(context).size;
+
+    var width = size.width;
     return SizedBox(
+      width: (width / 2) - 20,
       child: Card(
         color: Colors.white,
-        elevation: 1.5,
+        elevation: 6,
+        shadowColor: Colors.black12,
         child: Padding(
-          padding: const EdgeInsets.all(15),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              CircleAvatar(
-                backgroundColor: mainBlue,
-                child: Icon(
-                  widget.icon,
-                  color: Colors.white70,
+            padding: const EdgeInsets.all(15),
+            child: Wrap(
+              children: [
+                Row(children: [
+                  Expanded(
+                    child: Text(
+                      widget.deviceName,
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Colors.grey.shade700,
+                          fontSize: 18),
+                    ),
+                  ),
+                  Icon(
+                    widget.icon,
+                    color: mainBlue,
+                  ),
+                ]),
+                const SizedBox(
+                  height: 50,
                 ),
-              ),
-              const SizedBox(
-                width: 15,
-              ),
-              Expanded(
-                child: Text(
-                  widget.deviceName,
-                  style: TextStyle(
-                      fontWeight: FontWeight.normal,
-                      color: Colors.grey.shade700,
-                      fontSize: 18),
-                ),
-              ),
-              Switch.adaptive(
-                  activeColor: mainBlue,
-                  value: value,
-                  onChanged: (value) {
-                    setState(() {
-                      this.value = value;
-                    });
-                  })
-            ],
-          ),
-        ),
+                Row(
+                  children: [
+                    Expanded(
+                      child: Text(
+                        value ? 'ON' : 'OFF',
+                        style: TextStyle(
+                            fontWeight: FontWeight.w500,
+                            color: Colors.grey.shade600,
+                            fontSize: 14),
+                      ),
+                    ),
+                    Switch.adaptive(
+                        activeColor: mainBlue,
+                        inactiveTrackColor: Colors.blue.shade50,
+                        value: value,
+                        onChanged: (value) {
+                          setState(() {
+                            this.value = value;
+                          });
+                        })
+                  ],
+                )
+              ],
+            )),
       ),
     );
   }

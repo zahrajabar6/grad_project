@@ -36,7 +36,8 @@ class RoomsCard extends StatelessWidget {
             : () {},
         child: Card(
           color: Colors.white,
-          elevation: 1.5,
+          elevation: 6,
+          shadowColor: Colors.black12,
           child: Padding(
             padding: const EdgeInsets.all(15),
             child: Row(
