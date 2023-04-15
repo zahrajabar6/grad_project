@@ -21,27 +21,38 @@ class _CleaningSysCardState extends State<CleaningSysCard> {
   Widget build(BuildContext context) {
     return SizedBox(
       width: widget.width,
-      height: widget.height * 0.1,
+      height: widget.height * 0.15,
       child: Card(
         color: Colors.white,
-        elevation: 1.5,
+        elevation: 6,
+        shadowColor: Colors.black12,
         child: Padding(
-          padding: const EdgeInsets.all(15),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              const Text("Cleaning System", style: cardTitleTextStyle),
-              Switch.adaptive(
-                  activeColor: mainBlue,
-                  value: value,
-                  onChanged: (value) {
-                    setState(() {
-                      this.value = value;
-                    });
-                  })
-            ],
-          ),
-        ),
+            padding: const EdgeInsets.all(15),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    const Text("Cleaning System", style: cardBigTitleTextStyle),
+                    Switch.adaptive(
+                        activeColor: mainBlue,
+                        value: value,
+                        inactiveTrackColor: secondaryBlue,
+                        onChanged: (value) {
+                          setState(() {
+                            this.value = value;
+                          });
+                        })
+                  ],
+                ),
+                const Text(
+                  'The weather is dusty, turn on the cleaning system',
+                  style: cardTextTextStyle,
+                  textAlign: TextAlign.start,
+                ),
+              ],
+            )),
       ),
     );
   }

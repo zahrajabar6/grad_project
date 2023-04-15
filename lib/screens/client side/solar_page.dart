@@ -1,8 +1,10 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:grad_project/components/list_item.dart';
 import 'package:grad_project/screens/client%20side/drawer.dart';
 import 'package:grad_project/constant.dart';
 import 'package:grad_project/components/cleaning_system.dart';
-import 'package:grad_project/components/my_card.dart';
+import 'package:weather_icons/weather_icons.dart';
 
 class SolarPage extends StatelessWidget {
   const SolarPage({super.key});
@@ -16,11 +18,11 @@ class SolarPage extends StatelessWidget {
 
     //then we will use api to get these values
     final items = <dynamic>[
-      ['Current', '10 A', 'current.jpg'],
-      ['Voltage', '12 V', 'voltage.jpg'],
-      ['Temperature', '15 C', 'temp.jpg'],
-      ['Humidity', '10 %', 'humidity2.jpg'],
-      ['Dust', 'Dusty', 'dust.JPG']
+      ['Current', '10 A', 'current.jpg', Icons.energy_savings_leaf],
+      ['Voltage', '12 V', 'voltage.jpg', Icons.energy_savings_leaf],
+      ['Dust', 'Dusty', 'dust.JPG', WeatherIcons.dust],
+      ['Humidity', '10 %', 'humidity2.jpg', WeatherIcons.humidity],
+      ['Temperature', '15 C', 'temp.jpg', CupertinoIcons.thermometer],
     ];
 
     return Scaffold(
@@ -42,13 +44,12 @@ class SolarPage extends StatelessWidget {
                 spacing: 8,
                 //Get the children from the item list
                 children: items
-                    .map((e) => RoomsCard(
-                          isPressable: false,
-                          width: width,
-                          height: height * 0.20,
-                          text1: e[0],
-                          imageURL: e[2],
-                          text2: e[1],
+                    .map((e) => CardItem(
+                          icon: e[3],
+                          parValue: e[1],
+                          imgURL: e[2],
+                          parameter: e[0],
+                          text: e[2],
                         ))
                     .toList(),
               ),

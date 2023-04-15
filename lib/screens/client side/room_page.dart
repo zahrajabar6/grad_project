@@ -94,8 +94,11 @@ class RoomListView extends StatelessWidget {
                             style: TextStyle(
                                 fontSize: 22,
                                 color: mainBlue,
-                                fontWeight: FontWeight.w500),
+                                fontWeight: FontWeight.w400),
                             textAlign: TextAlign.center,
+                          ),
+                          const SizedBox(
+                            height: 8,
                           ),
                           Text(
                             'Power usage today',

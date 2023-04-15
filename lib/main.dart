@@ -28,7 +28,8 @@ class MyApp extends StatelessWidget {
         appBarTheme: const AppBarTheme(
           centerTitle: true,
           backgroundColor: mainBlue,
-          elevation: 2,
+          // shadowColor: Colors.black38,
+          elevation: 1.5,
         ),
       ),
       home: _auth.currentUser != null

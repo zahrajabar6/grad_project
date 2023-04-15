@@ -58,7 +58,7 @@ class RoomsCard extends StatelessWidget {
                     children: [
                       Text(
                         text1,
-                        style: cardTitleTextStyle,
+                        style: cardBigTitleTextStyle,
                       ),
                       SizedBox(
                         height: height * 0.08,

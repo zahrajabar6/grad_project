@@ -4,14 +4,19 @@ import 'package:flutter/material.dart';
 
 const Color lightGrey = Color(0xffb0b2b2);
 const Color mainBlue = Color(0xff00adee);
+const Color secondaryBlue = Color(0xfff2fcff);
 const buttonTextStyle =
     TextStyle(fontSize: 22, fontWeight: FontWeight.w400, color: Colors.white);
 
-const cardTitleTextStyle =
-    TextStyle(fontSize: 22, color: mainBlue, fontWeight: FontWeight.w400);
+const cardBigTitleTextStyle =
+    TextStyle(fontSize: 20, color: mainBlue, fontWeight: FontWeight.w400);
 
-const cardTextTextStyle =
-    TextStyle(fontSize: 18, color: lightGrey, fontWeight: FontWeight.w500);
+const cardTitleTextStyle =
+    TextStyle(fontSize: 16, color: mainBlue, fontWeight: FontWeight.w400);
+
+const cardTextTextStyle = TextStyle(fontSize: 14, color: lightGrey);
+
+const cardValueTextStyle = TextStyle(fontSize: 28, color: lightGrey);
 
 const drawerTextTextStyle = TextStyle(
     fontSize: 18,

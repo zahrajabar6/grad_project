@@ -49,63 +49,6 @@ class ChatListItem extends StatelessWidget {
   }
 }
 
-// class RoomListItem extends StatefulWidget {
-//   const RoomListItem({super.key, required this.icon, required this.deviceName});
-//   final IconData icon;
-//   final String deviceName;
-
-//   @override
-//   State<RoomListItem> createState() => _RoomListItemState();
-// }
-
-// class _RoomListItemState extends State<RoomListItem> {
-//   bool value = false;
-//   @override
-//   Widget build(BuildContext context) {
-//     return SizedBox(
-//       child: Card(
-//         color: Colors.white,
-//         elevation: 1.5,
-//         child: Padding(
-//           padding: const EdgeInsets.all(15),
-//           child: Row(
-//             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-//             children: [
-//               CircleAvatar(
-//                 backgroundColor: mainBlue,
-//                 child: Icon(
-//                   widget.icon,
-//                   color: Colors.white70,
-//                 ),
-//               ),
-//               const SizedBox(
-//                 width: 15,
-//               ),
-//               Expanded(
-//                 child: Text(
-//                   widget.deviceName,
-//                   style: TextStyle(
-//                       fontWeight: FontWeight.normal,
-//                       color: Colors.grey.shade700,
-//                       fontSize: 18),
-//                 ),
-//               ),
-//               Switch.adaptive(
-//                   activeColor: mainBlue,
-//                   value: value,
-//                   onChanged: (value) {
-//                     setState(() {
-//                       this.value = value;
-//                     });
-//                   })
-//             ],
-//           ),
-//         ),
-//       ),
-//     );
-//   }
-// }
-
 class RoomListItem extends StatefulWidget {
   const RoomListItem({super.key, required this.icon, required this.deviceName});
   final IconData icon;
@@ -137,10 +80,8 @@ class _RoomListItemState extends State<RoomListItem> {
                   Expanded(
                     child: Text(
                       widget.deviceName,
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          color: Colors.grey.shade700,
-                          fontSize: 18),
+                      style:
+                          TextStyle(color: Colors.grey.shade700, fontSize: 18),
                     ),
                   ),
                   Icon(
@@ -157,14 +98,12 @@ class _RoomListItemState extends State<RoomListItem> {
                       child: Text(
                         value ? 'ON' : 'OFF',
                         style: TextStyle(
-                            fontWeight: FontWeight.w500,
-                            color: Colors.grey.shade600,
-                            fontSize: 14),
+                            color: Colors.grey.shade600, fontSize: 14),
                       ),
                     ),
                     Switch.adaptive(
                         activeColor: mainBlue,
-                        inactiveTrackColor: Colors.blue.shade50,
+                        inactiveTrackColor: secondaryBlue,
                         value: value,
                         onChanged: (value) {
                           setState(() {
@@ -173,6 +112,84 @@ class _RoomListItemState extends State<RoomListItem> {
                         })
                   ],
                 )
+              ],
+            )),
+      ),
+    );
+  }
+}
+
+class CardItem extends StatefulWidget {
+  const CardItem(
+      {super.key,
+      required this.imgURL,
+      required this.parameter,
+      required this.parValue,
+      required this.text,
+      required this.icon});
+  final String imgURL;
+  final String parameter;
+  final IconData icon;
+  final String parValue;
+  final String text;
+
+  @override
+  State<CardItem> createState() => _CardItemState();
+}
+
+class _CardItemState extends State<CardItem> {
+  bool value = false;
+  @override
+  Widget build(BuildContext context) {
+    // getting the size of the window
+    var size = MediaQuery.of(context).size;
+
+    var width = size.width;
+    return SizedBox(
+      width: (width / 2) - 20,
+      child: Card(
+        color: Colors.white,
+        elevation: 6,
+        shadowColor: Colors.black12,
+        child: Padding(
+            padding: const EdgeInsets.all(15),
+            child: Column(
+              children: [
+                Row(children: [
+                  Expanded(
+                    child: Text(
+                      widget.parameter,
+                      style: cardTitleTextStyle,
+                    ),
+                  ),
+                  // Container(
+                  //   width: 35,
+                  //   height: 35,
+                  //   color: Colors.amber,
+                  //   child: Image.asset(
+                  //     "assets/images/${widget.imgURL}",
+                  //     fit: BoxFit.cover,
+                  //   ),
+                  // )
+                  Icon(
+                    widget.icon,
+                    color: mainBlue,
+                  ),
+                ]),
+                const SizedBox(
+                  height: 8,
+                ),
+                Text(
+                  widget.parValue,
+                  style: cardValueTextStyle,
+                ),
+                const SizedBox(
+                  height: 8,
+                ),
+                Text(
+                  widget.text,
+                  style: cardTextTextStyle,
+                ),
               ],
             )),
       ),
