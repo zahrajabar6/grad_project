@@ -57,7 +57,8 @@ class InfoCard extends StatelessWidget {
     return SizedBox(
       height: 210,
       child: Card(
-        elevation: 2,
+        elevation: 6,
+        shadowColor: Colors.black12,
         child: Padding(
           padding: const EdgeInsets.all(16),
           child: Column(

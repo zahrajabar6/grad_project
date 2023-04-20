@@ -126,12 +126,14 @@ class CardItem extends StatefulWidget {
       required this.parameter,
       required this.parValue,
       required this.text,
-      required this.icon});
+      required this.icon,
+      required this.cardWidth});
   final String imgURL;
   final String parameter;
   final IconData icon;
   final String parValue;
   final String text;
+  final double cardWidth;
 
   @override
   State<CardItem> createState() => _CardItemState();
@@ -141,12 +143,8 @@ class _CardItemState extends State<CardItem> {
   bool value = false;
   @override
   Widget build(BuildContext context) {
-    // getting the size of the window
-    var size = MediaQuery.of(context).size;
-
-    var width = size.width;
     return SizedBox(
-      width: (width / 2) - 20,
+      width: widget.cardWidth,
       child: Card(
         color: Colors.white,
         elevation: 6,
@@ -162,33 +160,25 @@ class _CardItemState extends State<CardItem> {
                       style: cardTitleTextStyle,
                     ),
                   ),
-                  // Container(
-                  //   width: 35,
-                  //   height: 35,
-                  //   color: Colors.amber,
-                  //   child: Image.asset(
-                  //     "assets/images/${widget.imgURL}",
-                  //     fit: BoxFit.cover,
-                  //   ),
-                  // )
                   Icon(
                     widget.icon,
                     color: mainBlue,
                   ),
                 ]),
                 const SizedBox(
-                  height: 8,
+                  height: 16,
                 ),
                 Text(
                   widget.parValue,
                   style: cardValueTextStyle,
                 ),
                 const SizedBox(
-                  height: 8,
+                  height: 16,
                 ),
                 Text(
                   widget.text,
                   style: cardTextTextStyle,
+                  textAlign: TextAlign.center,
                 ),
               ],
             )),

@@ -18,11 +18,29 @@ class SolarPage extends StatelessWidget {
 
     //then we will use api to get these values
     final items = <dynamic>[
-      ['Current', '10 A', 'current.jpg', Icons.energy_savings_leaf],
-      ['Voltage', '12 V', 'voltage.jpg', Icons.energy_savings_leaf],
-      ['Dust', 'Dusty', 'dust.JPG', WeatherIcons.dust],
-      ['Humidity', '10 %', 'humidity2.jpg', WeatherIcons.humidity],
-      ['Temperature', '15 C', 'temp.jpg', CupertinoIcons.thermometer],
+      ['Current', '10 A', 'current.jpg', Icons.energy_savings_leaf, ''],
+      ['Voltage', '12 V', 'voltage.jpg', Icons.energy_savings_leaf, ''],
+      [
+        'Dust',
+        'Dusty',
+        'dust.JPG',
+        WeatherIcons.dust,
+        'Dust affect the performance of the solar panel'
+      ],
+      [
+        'Humidity',
+        '10 %',
+        'humidity2.jpg',
+        WeatherIcons.humidity,
+        'High humidity reduce the performance by %20'
+      ],
+      [
+        'Temperature',
+        '15 C',
+        'temp.jpg',
+        CupertinoIcons.thermometer,
+        'High temperature increase the solar outcomes'
+      ],
     ];
 
     return Scaffold(
@@ -49,7 +67,10 @@ class SolarPage extends StatelessWidget {
                           parValue: e[1],
                           imgURL: e[2],
                           parameter: e[0],
-                          text: e[2],
+                          text: e[4],
+                          cardWidth: items.indexOf(e) == 2
+                              ? double.maxFinite
+                              : (width / 2) - 20,
                         ))
                     .toList(),
               ),

@@ -14,7 +14,8 @@ const cardBigTitleTextStyle =
 const cardTitleTextStyle =
     TextStyle(fontSize: 16, color: mainBlue, fontWeight: FontWeight.w400);
 
-const cardTextTextStyle = TextStyle(fontSize: 14, color: lightGrey);
+const cardTextTextStyle =
+    TextStyle(fontSize: 14, color: Color.fromRGBO(189, 189, 189, 1));
 
 const cardValueTextStyle = TextStyle(fontSize: 28, color: lightGrey);
 

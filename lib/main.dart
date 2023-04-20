@@ -24,6 +24,7 @@ class MyApp extends StatelessWidget {
       //app theme
       theme: ThemeData(
         fontFamily: "Lora",
+        scaffoldBackgroundColor: Colors.grey.shade50,
         platform: TargetPlatform.iOS,
         appBarTheme: const AppBarTheme(
           centerTitle: true,
