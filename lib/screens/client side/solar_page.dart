@@ -18,26 +18,23 @@ class SolarPage extends StatelessWidget {
 
     //then we will use api to get these values
     final items = <dynamic>[
-      ['Current', '10 A', 'current.jpg', Icons.energy_savings_leaf, ''],
-      ['Voltage', '12 V', 'voltage.jpg', Icons.energy_savings_leaf, ''],
+      ['Current', '3 A', Icons.energy_savings_leaf, 'Max Current is 4 A'],
+      ['Voltage', '12 V', Icons.energy_savings_leaf, 'Max voltage is 20 V'],
       [
         'Dust',
         'Dusty',
-        'dust.JPG',
         WeatherIcons.dust,
         'Dust affect the performance of the solar panel'
       ],
       [
         'Humidity',
         '10 %',
-        'humidity2.jpg',
         WeatherIcons.humidity,
         'High humidity reduce the performance by %20'
       ],
       [
         'Temperature',
         '15 C',
-        'temp.jpg',
         CupertinoIcons.thermometer,
         'High temperature increase the solar outcomes'
       ],
@@ -63,11 +60,10 @@ class SolarPage extends StatelessWidget {
                 //Get the children from the item list
                 children: items
                     .map((e) => CardItem(
-                          icon: e[3],
+                          icon: e[2],
                           parValue: e[1],
-                          imgURL: e[2],
                           parameter: e[0],
-                          text: e[4],
+                          text: e[3],
                           cardWidth: items.indexOf(e) == 2
                               ? double.maxFinite
                               : (width / 2) - 20,

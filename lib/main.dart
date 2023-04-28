@@ -33,6 +33,7 @@ class MyApp extends StatelessWidget {
           elevation: 1.5,
         ),
       ),
+      darkTheme: ThemeData.dark(),
       home: _auth.currentUser != null
           ? (_auth.currentUser!.email == 'admin@admin.com'
               ? const AdminPages()

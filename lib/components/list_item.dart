@@ -122,13 +122,12 @@ class _RoomListItemState extends State<RoomListItem> {
 class CardItem extends StatefulWidget {
   const CardItem(
       {super.key,
-      required this.imgURL,
       required this.parameter,
       required this.parValue,
       required this.text,
       required this.icon,
       required this.cardWidth});
-  final String imgURL;
+
   final String parameter;
   final IconData icon;
   final String parValue;

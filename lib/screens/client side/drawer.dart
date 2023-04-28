@@ -17,7 +17,7 @@ class MyDrawer extends StatefulWidget {
 
 class _MyDrawerState extends State<MyDrawer> {
   final _auth = FirebaseAuth.instance;
-
+  bool value = false;
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -38,6 +38,19 @@ class _MyDrawerState extends State<MyDrawer> {
               ),
             ),
           )),
+          ListTile(
+            leading: Switch.adaptive(
+                activeColor: mainBlue,
+                value: value,
+                inactiveTrackColor: secondaryBlue,
+                onChanged: (value) {
+                  setState(() {
+                    this.value = value;
+                  });
+                  Navigator.pop(context);
+                }),
+            title: const Text('Dark Mode', style: drawerTextTextStyle),
+          ),
           ListTile(
             leading: const Icon(
               CupertinoIcons.chat_bubble_2_fill,
