@@ -16,11 +16,11 @@ class Users extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Chats', style: appBarTextStyle),
       ),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 15),
+      body: const Padding(
+        padding: EdgeInsets.symmetric(vertical: 15),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: const [
+          children: [
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 15),
               child: Text(' Customers', style: pageLabelTextStyle),

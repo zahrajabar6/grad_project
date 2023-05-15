@@ -18,8 +18,8 @@ class SolarPage extends StatelessWidget {
 
     //then we will use api to get these values
     final items = <dynamic>[
-      ['Current', '3 A', Icons.energy_savings_leaf, 'Max Current is 4 A'],
-      ['Voltage', '12 V', Icons.energy_savings_leaf, 'Max voltage is 20 V'],
+      ['Current', '5 A', Icons.energy_savings_leaf, 'Max Current is 5 A'],
+      ['Voltage', '14 V', Icons.energy_savings_leaf, 'Max voltage is 14 V'],
       [
         'Dust',
         'Dusty',

@@ -39,7 +39,7 @@ class _SplashScreenState extends State<SplashScreen> {
           children: [
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 70, vertical: 40),
-              child: Image.asset('assets/images/logo1.png'),
+              child: Image.asset('assets/images/logo.png'),
             ),
             const SizedBox(
               height: 40,
@@ -53,11 +53,6 @@ class _SplashScreenState extends State<SplashScreen> {
           ],
         ),
       ),
-      // SizedBox(
-      //   height: 150,
-      //   child: Lottie.network(
-      //       'https://assets10.lottiefiles.com/datafiles/ugFV3T9Zi676bvx/data.json'),
-      // )),
     );
   }
 }

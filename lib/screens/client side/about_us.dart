@@ -10,12 +10,12 @@ class AboutUs extends StatelessWidget {
       appBar: AppBar(
         title: const Text('About Us', style: appBarTextStyle),
       ),
-      body: SingleChildScrollView(
+      body: const SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.all(20),
+          padding: EdgeInsets.all(20),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: const [
+            children: [
               InfoCard(
                 title: 'No More Load Shedding!',
                 text: 'Tired of Load Shedding? Our Solar System is the Answer',
