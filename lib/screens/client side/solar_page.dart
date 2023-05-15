@@ -4,10 +4,22 @@ import 'package:grad_project/components/list_item.dart';
 import 'package:grad_project/screens/client%20side/drawer.dart';
 import 'package:grad_project/constant.dart';
 import 'package:grad_project/components/cleaning_system.dart';
+import 'package:grad_project/services/networking.dart';
 import 'package:weather_icons/weather_icons.dart';
 
-class SolarPage extends StatelessWidget {
+class SolarPage extends StatefulWidget {
   const SolarPage({super.key});
+
+  @override
+  State<SolarPage> createState() => _SolarPageState();
+}
+
+class _SolarPageState extends State<SolarPage> {
+  void getData() async {
+    Networking networking = Networking();
+    var data = await networking.getData();
+    print(data);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +51,7 @@ class SolarPage extends StatelessWidget {
         'High temperature increase the solar outcomes'
       ],
     ];
-
+    getData();
     return Scaffold(
       drawer: const MyDrawer(),
       appBar: AppBar(

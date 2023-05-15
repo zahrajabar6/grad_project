@@ -24,6 +24,8 @@ dependencies:
   firebase_auth: ^4.2.8
   cloud_firestore: ^4.4.2
   weather_icons: ^3.0.0
+  http: ^0.13.6
+  provider: ^6.0.5
 
 dev_dependencies:
   flutter_test:
