@@ -55,6 +55,7 @@ const appBarTextStyle = TextStyle(fontSize: 24, fontWeight: FontWeight.w400);
 
 const kTextFieldDecoration = InputDecoration(
   hintText: 'hint text',
+  hintStyle: TextStyle(color: Color(0xFFBDBDBD)),
   contentPadding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
   border: OutlineInputBorder(
     borderRadius: BorderRadius.all(Radius.circular(32.0)),

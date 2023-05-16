@@ -50,7 +50,11 @@ class ChatListItem extends StatelessWidget {
 }
 
 class RoomListItem extends StatefulWidget {
-  const RoomListItem({super.key, required this.icon, required this.deviceName});
+  const RoomListItem({
+    super.key,
+    required this.icon,
+    required this.deviceName,
+  });
   final IconData icon;
   final String deviceName;
 

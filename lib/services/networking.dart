@@ -14,15 +14,16 @@ class Networking {
       String data = response.body;
       var decodedData = jsonDecode(data);
       solarReads = [
-        decodedData['feeds'][0]['field4'], //current
-        decodedData['feeds'][0]['field5'], //voltage
-        decodedData['feeds'][0]['field3'], //dust
-        '${decodedData['feeds'][0]['field2']}%', // humidity
-        '${decodedData['feeds'][0]['field1']} °C' // temperature
+        decodedData['feeds'][1]['field4'], //current
+        decodedData['feeds'][1]['field5'], //voltage
+        decodedData['feeds'][1]['field3'], //dust
+        '${decodedData['feeds'][1]['field2']}%', // humidity
+        '${decodedData['feeds'][1]['field1']} °C' // temperature
       ];
+      print(solarReads);
       return solarReads;
     } else {
-      //print(response.statusCode);
+      print(response.statusCode);
       throw 'Problem with the get request';
     }
   }

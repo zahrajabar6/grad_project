@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:grad_project/constant.dart';
-import 'package:grad_project/screens/client%20side/room_page.dart';
 
 class RoomsCard extends StatelessWidget {
   const RoomsCard({
@@ -10,15 +9,15 @@ class RoomsCard extends StatelessWidget {
     required this.text1,
     required this.imageURL,
     required this.text2,
-    required this.isPressable,
+    this.onPress,
   });
-  final bool isPressable;
+
   final double width;
   final double height;
   final String text1;
   final String imageURL;
   final String text2;
-
+  final void Function()? onPress;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -26,14 +25,7 @@ class RoomsCard extends StatelessWidget {
       height: height,
       child: MaterialButton(
         padding: EdgeInsets.zero,
-        onPressed: isPressable
-            ? () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => RoomPage(roomTitle: text1)));
-              }
-            : () {},
+        onPressed: onPress,
         child: Card(
           color: Colors.white,
           elevation: 6,
