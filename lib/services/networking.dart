@@ -5,15 +5,43 @@ class Networking {
   Networking();
 
   Future<dynamic> getData() async {
-    http.Response response = await http.get(Uri.parse(
-        'https://api.thingspeak.com/channels/1956914/feeds.json?results=2'));
+    List solarReads = [];
+    var url = Uri.parse(
+        'https://api.thingspeak.com/channels/1956914/feeds.json?results=2');
+    http.Response response = await http.get(url);
 
     if (response.statusCode == 200) {
       String data = response.body;
       var decodedData = jsonDecode(data);
-      return decodedData['channel']['field1'];
+      solarReads = [
+        decodedData['feeds'][0]['field4'], //current
+        decodedData['feeds'][0]['field5'], //voltage
+        decodedData['feeds'][0]['field3'], //dust
+        '${decodedData['feeds'][0]['field2']}%', // humidity
+        '${decodedData['feeds'][0]['field1']} °C' // temperature
+      ];
+      return solarReads;
     } else {
-      print(response.statusCode);
+      //print(response.statusCode);
+      throw 'Problem with the get request';
+    }
+  }
+
+  Future<dynamic> getBatteryVoltage() async {
+    String batteryVoltage = '';
+    var url = Uri.parse(
+        'https://api.thingspeak.com/channels/1956914/feeds.json?results=2');
+    http.Response response = await http.get(url);
+
+    if (response.statusCode == 200) {
+      String data = response.body;
+      var decodedData = jsonDecode(data);
+      batteryVoltage = decodedData['feeds'][0]['field5'];
+
+      return batteryVoltage;
+    } else {
+      //print(response.statusCode);
+      throw 'Problem with the get request';
     }
   }
 }

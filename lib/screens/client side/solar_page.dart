@@ -15,10 +15,27 @@ class SolarPage extends StatefulWidget {
 }
 
 class _SolarPageState extends State<SolarPage> {
-  void getData() async {
-    Networking networking = Networking();
-    var data = await networking.getData();
-    print(data);
+  @override
+  void initState() {
+    super.initState();
+    getSolarData();
+  }
+
+  List solarReads = [];
+  bool isWaiting = false;
+  void getSolarData() async {
+    isWaiting = true;
+    try {
+      Networking networking = Networking();
+      var data = await networking.getData();
+      isWaiting = false;
+      setState(() {
+        solarReads = data;
+      });
+      //print(solarReads);
+    } catch (e) {
+      //print(e);
+    }
   }
 
   @override
@@ -28,30 +45,27 @@ class _SolarPageState extends State<SolarPage> {
     var height = size.height;
     var width = size.width;
 
-    //then we will use api to get these values
-    final items = <dynamic>[
-      ['Current', '5 A', Icons.energy_savings_leaf, 'Max Current is 5 A'],
-      ['Voltage', '14 V', Icons.energy_savings_leaf, 'Max voltage is 14 V'],
-      [
-        'Dust',
-        'Dusty',
-        WeatherIcons.dust,
-        'Dust affect the performance of the solar panel'
-      ],
-      [
-        'Humidity',
-        '10 %',
-        WeatherIcons.humidity,
-        'High humidity reduce the performance by %20'
-      ],
-      [
-        'Temperature',
-        '15 C',
-        CupertinoIcons.thermometer,
-        'High temperature increase the solar outcomes'
-      ],
+    //fields
+    final fields = ['Current', 'Voltage', 'Dust', 'Humidity', 'Temperature'];
+
+    //decription of the fileds
+    final fieldsText = [
+      'Max Current is 5 A',
+      'Max voltage is 14 V',
+      'Dust affect the performance of the solar panel',
+      'High humidity reduce the performance by %20',
+      'High temperature increase the solar outcomes',
     ];
-    getData();
+
+    //ICONS
+    final icons = [
+      Icons.energy_savings_leaf,
+      Icons.energy_savings_leaf,
+      WeatherIcons.dust,
+      WeatherIcons.humidity,
+      CupertinoIcons.thermometer,
+    ];
+
     return Scaffold(
       drawer: const MyDrawer(),
       appBar: AppBar(
@@ -70,13 +84,14 @@ class _SolarPageState extends State<SolarPage> {
                 direction: Axis.horizontal,
                 spacing: 8,
                 //Get the children from the item list
-                children: items
+                children: fields
                     .map((e) => CardItem(
-                          icon: e[2],
-                          parValue: e[1],
-                          parameter: e[0],
-                          text: e[3],
-                          cardWidth: items.indexOf(e) == 2
+                          icon: icons[fields.indexOf(e)],
+                          parValue:
+                              isWaiting ? '...' : solarReads[fields.indexOf(e)],
+                          parameter: e,
+                          text: fieldsText[fields.indexOf(e)],
+                          cardWidth: fields.indexOf(e) == 2
                               ? double.maxFinite
                               : (width / 2) - 20,
                         ))

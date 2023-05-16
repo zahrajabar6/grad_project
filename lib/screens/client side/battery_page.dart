@@ -1,15 +1,47 @@
 import 'package:flutter/material.dart';
 import 'package:grad_project/screens/client%20side/drawer.dart';
 import 'package:grad_project/constant.dart';
+import 'package:grad_project/services/methods.dart';
+import 'package:grad_project/services/networking.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 
-class BatteryPage extends StatelessWidget {
+class BatteryPage extends StatefulWidget {
   const BatteryPage({super.key});
 
   @override
+  State<BatteryPage> createState() => _BatteryPageState();
+}
+
+class _BatteryPageState extends State<BatteryPage> {
+  @override
+  void initState() {
+    super.initState();
+    getBatteryVoltage();
+  }
+
+  String batteryVoltage = '';
+  bool isWaiting = false;
+
+  void getBatteryVoltage() async {
+    isWaiting = true;
+    try {
+      Networking networking = Networking();
+      var data = await networking.getBatteryVoltage();
+      isWaiting = false;
+      setState(() {
+        batteryVoltage = data;
+      });
+      //print(batteryVoltage);
+    } catch (e) {
+      //print(e);
+    }
+  }
+
+  @override
   Widget build(BuildContext context) {
-    //temp percent
-    var percent = 0.40;
+    //get percent
+    double myDouble = isWaiting ? 0.0 : double.parse(batteryVoltage);
+    double percent = Methodes.getPercent(myDouble);
 
     return Scaffold(
       drawer: const MyDrawer(),
@@ -30,7 +62,7 @@ class BatteryPage extends StatelessWidget {
               animationDuration: 1000,
               radius: 125,
               progressColor: mainBlue,
-              percent: percent,
+              percent: isWaiting ? 0.0 : percent,
               lineWidth: 25,
               backgroundColor: Colors.blue.shade50,
               circularStrokeCap: CircularStrokeCap.round,
