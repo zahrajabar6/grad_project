@@ -16,8 +16,8 @@ class Networking {
       solarReads = [
         decodedData['feeds'][1]['field4'], //current
         decodedData['feeds'][1]['field5'], //voltage
-        decodedData['feeds'][1]['field3'], //dust
-        '${decodedData['feeds'][1]['field2']}%', // humidity
+        'Dusty', // decodedData['feeds'][1]['field3'], //dust
+        decodedData['feeds'][1]['field2'], // humidity
         '${decodedData['feeds'][1]['field1']} °C' // temperature
       ];
       //print(solarReads);
@@ -42,6 +42,18 @@ class Networking {
       return batteryVoltage;
     } else {
       //print(response.statusCode);
+      throw 'Problem with the get request';
+    }
+  }
+
+  void postRequest(String api, int isON) async {
+    var url = Uri.parse('$api$isON');
+    http.Response response = await http.post(url);
+
+    if (response.statusCode == 200) {
+      print(response.statusCode);
+    } else {
+      print(response.statusCode);
       throw 'Problem with the get request';
     }
   }

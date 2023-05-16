@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:grad_project/screens/client%20side/rooms/bedroom_two.dart';
 import 'package:grad_project/screens/client%20side/rooms/kitchen.dart';
 import 'package:grad_project/screens/client%20side/rooms/livingroom.dart';
+import 'package:grad_project/services/networking.dart';
 
 import '../screens/client side/rooms/bedroom.dart';
 
@@ -58,8 +59,33 @@ class Methodes {
     }
   }
 
-  static void postApiRequest(String roomTitle, String deviceName) {
+  static void postApiRequest(
+      String roomTitle, String deviceName, int isON) async {
+    Networking networking = Networking();
     if (roomTitle == 'Main bedroom') {
-    } else if (roomTitle == 'Children bedroom') {}
+      if (deviceName == 'Light') {
+        networking.postRequest(
+            'https://api.thingspeak.com/update?api_key=UZOBPP8IJ3H1SSBB&field7=',
+            isON);
+      } else if (deviceName == 'Light2') {
+        networking.postRequest(
+            'https://api.thingspeak.com/update?api_key=UZOBPP8IJ3H1SSBB&field7=',
+            isON);
+      } else if (deviceName == 'Fan') {
+        networking.postRequest(
+            'https://api.thingspeak.com/update?api_key=UZOBPP8IJ3H1SSBB&field7=',
+            isON);
+      }
+    } else if (roomTitle == 'Children bedroom') {
+      if (deviceName == 'Light') {
+        networking.postRequest(
+            'https://api.thingspeak.com/update?api_key=UZOBPP8IJ3H1SSBB&field7=',
+            isON);
+      } else if (deviceName == 'Fan') {
+        networking.postRequest(
+            'https://api.thingspeak.com/update?api_key=UZOBPP8IJ3H1SSBB&field7=',
+            isON);
+      }
+    }
   }
 }

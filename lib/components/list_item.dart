@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:grad_project/constant.dart';
 import 'package:grad_project/screens/admin%20side/user_chat_screen.dart';
+import 'package:grad_project/services/methods.dart';
 
 class ChatListItem extends StatelessWidget {
   const ChatListItem(
@@ -54,9 +55,11 @@ class RoomListItem extends StatefulWidget {
     super.key,
     required this.icon,
     required this.deviceName,
+    required this.roomTitle,
   });
   final IconData icon;
   final String deviceName;
+  final String roomTitle;
 
   @override
   State<RoomListItem> createState() => _RoomListItemState();
@@ -113,6 +116,11 @@ class _RoomListItemState extends State<RoomListItem> {
                           setState(() {
                             this.value = value;
                           });
+                          Methodes.postApiRequest(
+                            widget.roomTitle,
+                            widget.deviceName,
+                            value ? 0 : 1,
+                          );
                         })
                   ],
                 )

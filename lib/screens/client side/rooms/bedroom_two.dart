@@ -17,15 +17,18 @@ class _BedroomTwoPageState extends State<BedroomTwoPage> {
   Widget build(BuildContext context) {
     //rooms
     final items = <dynamic>[
-      ['Light', Icons.light, true],
-      ['Air', Icons.air, true],
+      ['Light', Icons.light],
+      ['Fan', Icons.air],
     ];
 
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.roomTitle, style: appBarTextStyle),
       ),
-      body: RoomListView(items: items),
+      body: RoomListView(
+        items: items,
+        roomTitle: widget.roomTitle,
+      ),
     );
   }
 }
@@ -34,9 +37,11 @@ class RoomListView extends StatelessWidget {
   const RoomListView({
     super.key,
     required this.items,
+    required this.roomTitle,
   });
 
   final List items;
+  final String roomTitle;
 
   @override
   Widget build(BuildContext context) {
@@ -57,6 +62,7 @@ class RoomListView extends StatelessWidget {
                 .map((e) => RoomListItem(
                       deviceName: e[0],
                       icon: e[1],
+                      roomTitle: '',
                     ))
                 .toList(),
           ),
