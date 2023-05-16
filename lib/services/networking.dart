@@ -20,10 +20,10 @@ class Networking {
         '${decodedData['feeds'][1]['field2']}%', // humidity
         '${decodedData['feeds'][1]['field1']} °C' // temperature
       ];
-      print(solarReads);
+      //print(solarReads);
       return solarReads;
     } else {
-      print(response.statusCode);
+      //print(response.statusCode);
       throw 'Problem with the get request';
     }
   }
