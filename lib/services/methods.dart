@@ -9,8 +9,10 @@ import '../screens/client side/rooms/bedroom.dart';
 class Methodes {
   static double getPercent(double voltage) {
     var percent = 0.0;
-    if (voltage <= 11.63) {
+    if (voltage <= 11) {
       percent = 0.0;
+    } else if (voltage <= 11.1) {
+      percent = 0.05;
     } else if (voltage <= 11.70) {
       percent = 0.10;
     } else if (voltage <= 11.81) {
@@ -61,30 +63,29 @@ class Methodes {
 
   static void postApiRequest(
       String roomTitle, String deviceName, int isON) async {
+    String mainURL = 'https://api.thingspeak.com/update?api_key=';
+    String key = 'QOFA4SCW6BELFY7I';
     Networking networking = Networking();
     if (roomTitle == 'Main bedroom') {
       if (deviceName == 'Light') {
-        networking.postRequest(
-            'https://api.thingspeak.com/update?api_key=UZOBPP8IJ3H1SSBB&field7=',
-            isON);
+        networking.postRequest('$mainURL$key&field1=', isON);
       } else if (deviceName == 'Light2') {
-        networking.postRequest(
-            'https://api.thingspeak.com/update?api_key=UZOBPP8IJ3H1SSBB&field7=',
-            isON);
+        networking.postRequest('$mainURL$key&field2=', isON);
       } else if (deviceName == 'Fan') {
-        networking.postRequest(
-            'https://api.thingspeak.com/update?api_key=UZOBPP8IJ3H1SSBB&field7=',
-            isON);
+        networking.postRequest('$mainURL$key&field4=', isON);
       }
     } else if (roomTitle == 'Children bedroom') {
       if (deviceName == 'Light') {
-        networking.postRequest(
-            'https://api.thingspeak.com/update?api_key=UZOBPP8IJ3H1SSBB&field7=',
-            isON);
+        networking.postRequest('$mainURL$key&field3=', isON);
       } else if (deviceName == 'Fan') {
-        networking.postRequest(
-            'https://api.thingspeak.com/update?api_key=UZOBPP8IJ3H1SSBB&field7=',
-            isON);
+        networking.postRequest('$mainURL$key&field5=', isON);
+      }
+    } else if (roomTitle == 'Living Room') {
+      //ac load
+      if (deviceName == 'Light') {
+        networking.postRequest('$mainURL$key&field6=', isON);
+      } else {
+        //other devices
       }
     }
   }

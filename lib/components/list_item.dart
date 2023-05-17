@@ -119,7 +119,7 @@ class _RoomListItemState extends State<RoomListItem> {
                           Methodes.postApiRequest(
                             widget.roomTitle,
                             widget.deviceName,
-                            value ? 0 : 1,
+                            value ? 2 : 3,
                           );
                         })
                   ],
