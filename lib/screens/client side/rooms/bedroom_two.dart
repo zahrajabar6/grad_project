@@ -62,7 +62,7 @@ class RoomListView extends StatelessWidget {
                 .map((e) => RoomListItem(
                       deviceName: e[0],
                       icon: e[1],
-                      roomTitle: '',
+                      roomTitle: roomTitle,
                     ))
                 .toList(),
           ),
