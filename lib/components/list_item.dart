@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:grad_project/constant.dart';
 import 'package:grad_project/screens/admin%20side/user_chat_screen.dart';
-import 'package:grad_project/services/methods.dart';
 
 class ChatListItem extends StatelessWidget {
   const ChatListItem(
@@ -50,23 +49,23 @@ class ChatListItem extends StatelessWidget {
   }
 }
 
-class RoomListItem extends StatefulWidget {
+class RoomListItem extends StatelessWidget {
   const RoomListItem({
     super.key,
     required this.icon,
     required this.deviceName,
     required this.roomTitle,
+    required this.isOn,
+    required this.switchCallback,
   });
   final IconData icon;
   final String deviceName;
   final String roomTitle;
+  final bool isOn;
+  final void Function(bool?)? switchCallback;
 
-  @override
-  State<RoomListItem> createState() => _RoomListItemState();
-}
+  //bool value = false;
 
-class _RoomListItemState extends State<RoomListItem> {
-  bool value = false;
   @override
   Widget build(BuildContext context) {
     // getting the size of the window
@@ -86,13 +85,13 @@ class _RoomListItemState extends State<RoomListItem> {
                 Row(children: [
                   Expanded(
                     child: Text(
-                      widget.deviceName,
+                      deviceName,
                       style:
                           TextStyle(color: Colors.grey.shade700, fontSize: 18),
                     ),
                   ),
                   Icon(
-                    widget.icon,
+                    icon,
                     color: mainBlue,
                   ),
                 ]),
@@ -103,30 +102,48 @@ class _RoomListItemState extends State<RoomListItem> {
                   children: [
                     Expanded(
                       child: Text(
-                        value ? 'ON' : 'OFF',
+                        //value ? 'ON' : 'OFF',
+                        isOn ? 'ON' : 'OFF',
                         style: TextStyle(
                             color: Colors.grey.shade600, fontSize: 14),
                       ),
                     ),
-                    Switch.adaptive(
-                        activeColor: mainBlue,
-                        inactiveTrackColor: secondaryBlue,
-                        value: value,
-                        onChanged: (value) {
-                          setState(() {
-                            this.value = value;
-                          });
-                          Methodes.postApiRequest(
-                            widget.roomTitle,
-                            widget.deviceName,
-                            value ? 2 : 3,
-                          );
-                        })
+                    SwitchWidget(
+                      deviceName: deviceName,
+                      isOn: isOn,
+                      roomTitle: roomTitle,
+                      switchCallback: switchCallback,
+                    )
                   ],
                 )
               ],
             )),
       ),
+    );
+  }
+}
+
+class SwitchWidget extends StatelessWidget {
+  const SwitchWidget({
+    super.key,
+    required this.roomTitle,
+    required this.deviceName,
+    required this.isOn,
+    this.switchCallback,
+  });
+
+  final String roomTitle;
+  final String deviceName;
+  final bool isOn;
+  final void Function(bool?)? switchCallback;
+
+  @override
+  Widget build(BuildContext context) {
+    return Switch.adaptive(
+      activeColor: mainBlue,
+      inactiveTrackColor: secondaryBlue,
+      value: isOn,
+      onChanged: switchCallback,
     );
   }
 }

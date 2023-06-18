@@ -54,7 +54,7 @@ class Networking {
       print(response.statusCode);
     } else {
       print(response.statusCode);
-      throw 'Problem with the get request';
+      throw 'Problem with the post request';
     }
   }
 }

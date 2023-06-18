@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:grad_project/screens/client%20side/rooms/bedroom_two.dart';
-import 'package:grad_project/screens/client%20side/rooms/kitchen.dart';
-import 'package:grad_project/screens/client%20side/rooms/livingroom.dart';
+
 import 'package:grad_project/services/networking.dart';
 
 import '../screens/client side/rooms/bedroom.dart';
@@ -39,25 +37,25 @@ class Methodes {
 
   static void routeRoom(context, String title) {
     if (title == 'Living Room') {
-      Navigator.push(
-          context,
-          MaterialPageRoute(
-              builder: (context) => LivingRoomPage(roomTitle: title)));
+      // Navigator.push(
+      //     context,
+      //     MaterialPageRoute(
+      //         builder: (context) => LivingRoomPage(roomTitle: title)));
     } else if (title == 'Main bedroom') {
       Navigator.push(
           context,
           MaterialPageRoute(
               builder: (context) => BedroomPage(roomTitle: title)));
     } else if (title == 'Children bedroom') {
-      Navigator.push(
-          context,
-          MaterialPageRoute(
-              builder: (context) => BedroomTwoPage(roomTitle: title)));
+      // Navigator.push(
+      //     context,
+      //     MaterialPageRoute(
+      //         builder: (context) => BedroomTwoPage(roomTitle: title)));
     } else {
-      Navigator.push(
-          context,
-          MaterialPageRoute(
-              builder: (context) => KitchenPage(roomTitle: title)));
+      // Navigator.push(
+      //     context,
+      //     MaterialPageRoute(
+      //         builder: (context) => KitchenPage(roomTitle: title)));
     }
   }
 
@@ -68,11 +66,14 @@ class Methodes {
     Networking networking = Networking();
     if (roomTitle == 'Main bedroom') {
       if (deviceName == 'Light') {
-        networking.postRequest('$mainURL$key&field1=', isON);
+        //networking.postRequest('$mainURL$key&field1=', isON);
+        print('ligth1 $isON');
       } else if (deviceName == 'Light2') {
-        networking.postRequest('$mainURL$key&field2=', isON);
+        //networking.postRequest('$mainURL$key&field2=', isON);
+        print('ligth2 $isON');
       } else if (deviceName == 'Fan') {
-        networking.postRequest('$mainURL$key&field4=', isON);
+        //networking.postRequest('$mainURL$key&field4=', isON);
+        print('fan $isON');
       }
     } else if (roomTitle == 'Children bedroom') {
       if (deviceName == 'Light') {
