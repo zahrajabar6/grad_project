@@ -64,8 +64,6 @@ class RoomListItem extends StatelessWidget {
   final bool isOn;
   final void Function(bool?)? switchCallback;
 
-  //bool value = false;
-
   @override
   Widget build(BuildContext context) {
     // getting the size of the window
@@ -102,7 +100,6 @@ class RoomListItem extends StatelessWidget {
                   children: [
                     Expanded(
                       child: Text(
-                        //value ? 'ON' : 'OFF',
                         isOn ? 'ON' : 'OFF',
                         style: TextStyle(
                             color: Colors.grey.shade600, fontSize: 14),

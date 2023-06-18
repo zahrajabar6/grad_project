@@ -18,7 +18,7 @@ class HomePage extends StatelessWidget {
     final items = <dynamic>[
       ['Living Room', 'livingroom.jpg', '4 Devices'],
       ['Main bedroom', 'bedroom.jpg', '3 Devices'],
-      ['Children bedroom', 'bedroom.jpg', '2 Devices'],
+      ['Children bedroom', 'childroom.jpg', '2 Devices'],
       ['Kitchen', 'kitchen2.jpg', '4 Devices'],
     ];
 

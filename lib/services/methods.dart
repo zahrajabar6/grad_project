@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-
+import 'package:grad_project/screens/client%20side/room.dart';
+import 'package:grad_project/services/device_data.dart';
 import 'package:grad_project/services/networking.dart';
-
-import '../screens/client side/rooms/bedroom.dart';
+import 'package:provider/provider.dart';
 
 class Methodes {
   static double getPercent(double voltage) {
@@ -37,25 +37,46 @@ class Methodes {
 
   static void routeRoom(context, String title) {
     if (title == 'Living Room') {
-      // Navigator.push(
-      //     context,
-      //     MaterialPageRoute(
-      //         builder: (context) => LivingRoomPage(roomTitle: title)));
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => RoomPage(
+            roomTitle: title,
+            devices:
+                Provider.of<DeviceData>(context, listen: true).livingroomItems,
+          ),
+        ),
+      );
     } else if (title == 'Main bedroom') {
       Navigator.push(
           context,
           MaterialPageRoute(
-              builder: (context) => BedroomPage(roomTitle: title)));
+            builder: (context) => RoomPage(
+              roomTitle: title,
+              devices:
+                  Provider.of<DeviceData>(context, listen: true).bedroomItems,
+            ),
+          ));
     } else if (title == 'Children bedroom') {
-      // Navigator.push(
-      //     context,
-      //     MaterialPageRoute(
-      //         builder: (context) => BedroomTwoPage(roomTitle: title)));
+      Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => RoomPage(
+              roomTitle: title,
+              devices: Provider.of<DeviceData>(context, listen: true)
+                  .childrenroomItems,
+            ),
+          ));
     } else {
-      // Navigator.push(
-      //     context,
-      //     MaterialPageRoute(
-      //         builder: (context) => KitchenPage(roomTitle: title)));
+      Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => RoomPage(
+              roomTitle: title,
+              devices:
+                  Provider.of<DeviceData>(context, listen: true).kitchenItems,
+            ),
+          ));
     }
   }
 
@@ -66,14 +87,14 @@ class Methodes {
     Networking networking = Networking();
     if (roomTitle == 'Main bedroom') {
       if (deviceName == 'Light') {
-        //networking.postRequest('$mainURL$key&field1=', isON);
-        print('ligth1 $isON');
+        networking.postRequest('$mainURL$key&field1=', isON);
+        //print('ligth1 $isON');
       } else if (deviceName == 'Light2') {
-        //networking.postRequest('$mainURL$key&field2=', isON);
-        print('ligth2 $isON');
+        networking.postRequest('$mainURL$key&field2=', isON);
+        //print('ligth2 $isON');
       } else if (deviceName == 'Fan') {
-        //networking.postRequest('$mainURL$key&field4=', isON);
-        print('fan $isON');
+        networking.postRequest('$mainURL$key&field4=', isON);
+        //print('fan $isON');
       }
     } else if (roomTitle == 'Children bedroom') {
       if (deviceName == 'Light') {

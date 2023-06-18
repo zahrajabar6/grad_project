@@ -51,9 +51,9 @@ class Networking {
     http.Response response = await http.post(url);
 
     if (response.statusCode == 200) {
-      print(response.statusCode);
+      //print(response.statusCode);
     } else {
-      print(response.statusCode);
+      //print(response.statusCode);
       throw 'Problem with the post request';
     }
   }

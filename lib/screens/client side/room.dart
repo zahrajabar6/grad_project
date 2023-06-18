@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:grad_project/components/list_item.dart';
 import 'package:grad_project/constant.dart';
-import 'package:grad_project/screens/client%20side/rooms/general_info.dart';
+import 'package:grad_project/screens/client%20side/general_info.dart';
+import 'package:grad_project/services/device.dart';
 import 'package:grad_project/services/device_data.dart';
 import 'package:grad_project/services/methods.dart';
 import 'package:provider/provider.dart';
 
-class BedroomPage extends StatelessWidget {
-  const BedroomPage({super.key, required this.roomTitle});
+class RoomPage extends StatelessWidget {
+  const RoomPage({super.key, required this.roomTitle, required this.devices});
   final String roomTitle;
-
+  final List<Device> devices;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,8 +27,7 @@ class BedroomPage extends StatelessWidget {
             direction: Axis.horizontal,
             spacing: 8,
             //Get the children from the item list
-            children: Provider.of<DeviceData>(context, listen: true)
-                .bedroomItems
+            children: devices
                 .map((e) => RoomListItem(
                       deviceName: e.deviceName,
                       icon: e.icon,
@@ -39,7 +39,7 @@ class BedroomPage extends StatelessWidget {
                         Methodes.postApiRequest(
                           roomTitle,
                           e.deviceName,
-                          e.isOn ? 2 : 3,
+                          e.isOn ? 2 : 1,
                         );
                       },
                     ))

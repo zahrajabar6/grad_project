@@ -34,7 +34,7 @@ class MyApp extends StatelessWidget {
             centerTitle: true,
             backgroundColor: mainBlue,
             // shadowColor: Colors.black38,
-            elevation: 1.5,
+            elevation: 1,
           ),
         ),
         darkTheme: ThemeData.dark(),
