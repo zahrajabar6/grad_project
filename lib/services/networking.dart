@@ -19,7 +19,9 @@ class Networking {
             : decodedData['feeds'][1]
                 ['field4'], //current => if ac is null display dc
         decodedData['feeds'][1]['field5'], //voltage
-        'Dusty', // decodedData['feeds'][1]['field3'], //dust
+        double.parse(decodedData['feeds'][1]['field3']) < 200
+            ? 'Not Dusty'
+            : 'Dusty', //dust
         '${decodedData['feeds'][1]['field2']} %', // humidity
         '${decodedData['feeds'][1]['field1']} °C' // temperature
       ];

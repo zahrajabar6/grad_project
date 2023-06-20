@@ -9,10 +9,14 @@ class CleaningSysCard extends StatefulWidget {
     super.key,
     required this.width,
     required this.height,
+    required this.status,
+    required this.isWaiting,
   });
 
   final double width;
   final double height;
+  final String status;
+  final bool isWaiting;
 
   @override
   State<CleaningSysCard> createState() => _CleaningSysCardState();
@@ -52,8 +56,12 @@ class _CleaningSysCardState extends State<CleaningSysCard> {
                         })
                   ],
                 ),
-                const Text(
-                  'The weather is dusty, turn on the cleaning system',
+                Text(
+                  widget.isWaiting
+                      ? '...'
+                      : widget.status == 'Not Dusty'
+                          ? 'The weather is not dusty, you don\'t need to turn on the cleaning system'
+                          : 'The weather is dusty, you need to turn on the cleaning system',
                   style: cardTextTextStyle,
                   textAlign: TextAlign.start,
                 ),

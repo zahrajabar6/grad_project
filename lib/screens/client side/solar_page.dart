@@ -101,7 +101,12 @@ class _SolarPageState extends State<SolarPage> {
                         ))
                     .toList(),
               ),
-              CleaningSysCard(width: width, height: height)
+              CleaningSysCard(
+                width: width,
+                height: height,
+                status: isWaiting ? '...' : solarReads[2],
+                isWaiting: isWaiting,
+              )
             ],
           ),
         ),
