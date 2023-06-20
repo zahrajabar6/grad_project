@@ -88,13 +88,10 @@ class Methodes {
     if (roomTitle == 'Main bedroom') {
       if (deviceName == 'Light') {
         networking.postRequest('$mainURL$key&field1=', isON);
-        //print('ligth1 $isON');
       } else if (deviceName == 'Light2') {
         networking.postRequest('$mainURL$key&field2=', isON);
-        //print('ligth2 $isON');
       } else if (deviceName == 'Fan') {
         networking.postRequest('$mainURL$key&field4=', isON);
-        //print('fan $isON');
       }
     } else if (roomTitle == 'Children bedroom') {
       if (deviceName == 'Light') {
@@ -109,6 +106,17 @@ class Methodes {
       } else {
         //other devices
       }
+    }
+  }
+
+  static void postApiRequestCSys(bool isON) async {
+    String mainURL = 'https://api.thingspeak.com/update?api_key=';
+    String key = 'QOFA4SCW6BELFY7I';
+    Networking networking = Networking();
+    if (isON == true) {
+      networking.postRequest('$mainURL$key&field7=', 2);
+    } else {
+      networking.postRequest('$mainURL$key&field7=', 1);
     }
   }
 }

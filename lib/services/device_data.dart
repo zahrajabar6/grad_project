@@ -28,8 +28,15 @@ class DeviceData extends ChangeNotifier {
     Device(deviceName: 'Heater', icon: Icons.heat_pump),
   ];
 
+  final CleaningSys cSys = CleaningSys();
+
   void updateDevice(Device device) {
     device.toggleOn();
+    notifyListeners();
+  }
+
+  void updateCleaningSys(CleaningSys cleaningSys) {
+    cleaningSys.toggleOn();
     notifyListeners();
   }
 }

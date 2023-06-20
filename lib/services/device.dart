@@ -11,3 +11,12 @@ class Device {
     isOn = !isOn;
   }
 }
+
+class CleaningSys {
+  bool isOn;
+  CleaningSys({this.isOn = false});
+
+  void toggleOn() {
+    isOn = !isOn;
+  }
+}

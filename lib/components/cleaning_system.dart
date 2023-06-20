@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:grad_project/constant.dart';
+import 'package:grad_project/services/device_data.dart';
+import 'package:grad_project/services/methods.dart';
+import 'package:provider/provider.dart';
 
 class CleaningSysCard extends StatefulWidget {
   const CleaningSysCard({
@@ -16,9 +19,9 @@ class CleaningSysCard extends StatefulWidget {
 }
 
 class _CleaningSysCardState extends State<CleaningSysCard> {
-  bool value = false;
   @override
   Widget build(BuildContext context) {
+    bool value = Provider.of<DeviceData>(context, listen: true).cSys.isOn;
     return SizedBox(
       width: widget.width,
       height: widget.height * 0.15,
@@ -40,9 +43,12 @@ class _CleaningSysCardState extends State<CleaningSysCard> {
                         value: value,
                         inactiveTrackColor: secondaryBlue,
                         onChanged: (value) {
-                          setState(() {
-                            this.value = value;
-                          });
+                          Provider.of<DeviceData>(context, listen: false)
+                              .updateCleaningSys(Provider.of<DeviceData>(
+                                      context,
+                                      listen: false)
+                                  .cSys);
+                          Methodes.postApiRequestCSys(value);
                         })
                   ],
                 ),

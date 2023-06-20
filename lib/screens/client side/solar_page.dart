@@ -87,8 +87,9 @@ class _SolarPageState extends State<SolarPage> {
                 children: fields
                     .map((e) => CardItem(
                           icon: icons[fields.indexOf(e)],
-                          parValue:
-                              isWaiting ? '...' : solarReads[fields.indexOf(e)],
+                          parValue: isWaiting
+                              ? '...'
+                              : '${solarReads[fields.indexOf(e)]}',
                           parameter: e,
                           text: fieldsText[fields.indexOf(e)],
                           cardWidth: fields.indexOf(e) == 2
