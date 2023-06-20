@@ -54,7 +54,7 @@ class _SolarPageState extends State<SolarPage> {
       'Max voltage is 14 V',
       'Dust affect the performance of the solar panel',
       'High humidity reduce the performance by %20',
-      'High temperature increase the solar outcomes',
+      'High temperature increase the performance',
     ];
 
     //ICONS

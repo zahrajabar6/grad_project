@@ -55,7 +55,7 @@ class InfoCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 210,
+      //height: 210,
       child: Card(
         elevation: 6,
         shadowColor: Colors.black12,

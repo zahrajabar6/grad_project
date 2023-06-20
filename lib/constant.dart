@@ -9,15 +9,15 @@ const buttonTextStyle =
     TextStyle(fontSize: 22, fontWeight: FontWeight.w400, color: Colors.white);
 
 const cardBigTitleTextStyle =
-    TextStyle(fontSize: 20, color: mainBlue, fontWeight: FontWeight.w400);
+    TextStyle(fontSize: 18, color: mainBlue, fontWeight: FontWeight.w400);
 
 const cardTitleTextStyle =
-    TextStyle(fontSize: 16, color: mainBlue, fontWeight: FontWeight.w400);
+    TextStyle(fontSize: 14, color: mainBlue, fontWeight: FontWeight.w400);
 
 const cardTextTextStyle =
-    TextStyle(fontSize: 14, color: Color.fromRGBO(189, 189, 189, 1));
+    TextStyle(fontSize: 12, color: Color.fromRGBO(189, 189, 189, 1));
 
-const cardValueTextStyle = TextStyle(fontSize: 28, color: lightGrey);
+const cardValueTextStyle = TextStyle(fontSize: 22, color: lightGrey);
 
 const drawerTextTextStyle = TextStyle(
     fontSize: 18,
@@ -34,10 +34,10 @@ const batteryPercentTextStyle =
     TextStyle(color: lightGrey, fontSize: 65, fontWeight: FontWeight.w400);
 
 const pageLabelTextStyle =
-    TextStyle(color: mainBlue, fontSize: 24, fontWeight: FontWeight.w400);
+    TextStyle(color: mainBlue, fontSize: 20, fontWeight: FontWeight.w400);
 
 const pageTextTextStyle =
-    TextStyle(color: lightGrey, fontSize: 16, fontWeight: FontWeight.normal);
+    TextStyle(color: lightGrey, fontSize: 14, fontWeight: FontWeight.normal);
 
 const loginLableTextStyle = TextStyle(
     fontSize: 30,

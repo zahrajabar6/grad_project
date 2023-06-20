@@ -191,14 +191,14 @@ class _CardItemState extends State<CardItem> {
                   ),
                 ]),
                 const SizedBox(
-                  height: 16,
+                  height: 20,
                 ),
                 Text(
                   widget.parValue,
                   style: cardValueTextStyle,
                 ),
                 const SizedBox(
-                  height: 16,
+                  height: 20,
                 ),
                 Text(
                   widget.text,
