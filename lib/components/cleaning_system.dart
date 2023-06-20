@@ -28,7 +28,7 @@ class _CleaningSysCardState extends State<CleaningSysCard> {
     bool value = Provider.of<DeviceData>(context, listen: true).cSys.isOn;
     return SizedBox(
       width: widget.width,
-      height: widget.height * 0.15,
+      height: widget.height * 0.18,
       child: Card(
         color: Colors.white,
         elevation: 6,
