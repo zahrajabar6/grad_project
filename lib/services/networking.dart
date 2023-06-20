@@ -14,7 +14,10 @@ class Networking {
       String data = response.body;
       var decodedData = jsonDecode(data);
       solarReads = [
-        decodedData['feeds'][1]['field4'], //current
+        decodedData['feeds'][1]['field4'] == 'nan'
+            ? decodedData['feeds'][1]['field6']
+            : decodedData['feeds'][1]
+                ['field4'], //current => if ac is null display dc
         decodedData['feeds'][1]['field5'], //voltage
         'Dusty', // decodedData['feeds'][1]['field3'], //dust
         decodedData['feeds'][1]['field2'], // humidity
@@ -37,7 +40,7 @@ class Networking {
     if (response.statusCode == 200) {
       String data = response.body;
       var decodedData = jsonDecode(data);
-      batteryVoltage = decodedData['feeds'][0]['field5'];
+      batteryVoltage = decodedData['feeds'][1]['field5'];
 
       return batteryVoltage;
     } else {

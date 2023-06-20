@@ -94,6 +94,9 @@ class _SolarPageState extends State<SolarPage> {
                           cardWidth: fields.indexOf(e) == 2
                               ? double.maxFinite
                               : (width / 2) - 20,
+                          // cardWidth: fields.indexOf(e) == 2
+                          //     ? double.maxFinite
+                          //     : (width / 2) - 20,
                         ))
                     .toList(),
               ),
